@@ -1,0 +1,42 @@
+html{
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* A propos */
+.about{
+    margin-bottom: 10em;
+}
+
+/* Home */
+.home{
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+/* Categories */
+.categories{
+  
+    margin-bottom: 5.5em;
+}
+
+/* Signup */
+.signup{
+  
+    height: 50vh;
+}
+
+/* Signup */
+.contact{
+  
+    height: 83vh;
+}
+
+/* Form add_article */
+.add-article{
+    height: 90vh;
+    margin-bottom: 15em;
+}
+
+.form-group{
+    margin-top: 1em;
+}
