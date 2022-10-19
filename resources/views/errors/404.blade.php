@@ -11,7 +11,7 @@
 			<div class="notfound-404">
 				<h1>404</h1>
 			</div>
-			<h2>Désolé la page demandé est introuvable.</h2>
+			<h2>Désolé la page demandée est introuvable.</h2>
 			<a href="#" class="home-btn">Aller à l'accueil</a>
 		</div>
 	</div>

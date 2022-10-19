@@ -58,4 +58,11 @@ Route::get('/contact', [PagesController::class, "contact"]);
 
 /* ADMIN */
 
-Route::get("/dashboard", [AdminController::class, "dashbord"]);
+Route::get("/admin/dashboard", [adminController::class, "dashboard"]);
+Route::get("/admin/users", [adminController::class, "users"]);
+Route::get("/admin/articles", [adminController::class, "articles"]);
+Route::get("/admin/categories", [adminController::class, "categories"]);
+Route::get("/admin/stats", [adminController::class, "stats"]);
+Route::get("/admin/category/{nom_categorie}", [adminController::class, "category"]);
+Route::get("/admin/add-article", [adminController::class, "add_article"]);
+Route::get("/admin/create-article", [adminController::class, "create_article"]);
