@@ -4,37 +4,24 @@
 @endsection
 @section('adminContent')
     
-<div style="" class="page-container">
+<div style="background-color: rgb(238, 236, 255)" class="page-container">
     <div class="main-content ">
         <div class="section__content">
             <div class="container-fluid ">
 
-                <h2>ADMINISTRATION</h2>
-                <H5>Ajouter un article</H5>
+                <h3 class="mb-4">Publier un article</h3>
                 {{-- Message success --}}
-                @if(Session::has("success"))
-                  <div class="alert alert-success col-lg-6">
-                    {{Session::get("success")}}
-                  </div>
-                @endif
-                {{-- Message error --}}
-                @if(Session::has("error"))
-                  <div class="alert alert-danger col-lg-6">
-                    {{Session::get("error")}}
-                  </div>
-                @endif
                 {{-- @if($errors->any())
-            
                   <div>
                     @foreach($errors->all() as $error)
                         <p class="alert alert-danger col-lg-8">{{$error}}</p>
                     @endforeach
                   </div>
                 @endif --}}
-              <form class="row" action="{{URL::to('/create-article')}}" method="post" enctype="multipart/form-data" >
+              <form class="row" action="{{URL::to('/admin/create-article')}}" method="post" enctype="multipart/form-data" >
                 @csrf
             
-                <div class="col-lg-8">
+                <div class="col-lg-9">
                 <div class="form-group">
                     <input type="text" name="titre" class="form-control @error('titre') is-invalid @enderror" placeholder="Nom de l'article">
                     @error("titre") <span class="text-danger">{{$message}}</span> @enderror
@@ -52,7 +39,7 @@
                     @error("publication") <span class="text-danger">{{$message}}</span> @enderror
                 </div>
                 <div class="form-group">
-                    <select name="categorie" id="" class="@error('categorie') is-invalid @enderror">
+                    <select name="categorie" id="" class="form-control  @error('categorie') is-invalid @enderror">
                         <option value="" selected disabled>Catégorie</option>
                         <option value="Frontend">Frontend</option>
                         <option value="Backend">Backend</option>
@@ -66,20 +53,22 @@
                     @error("categorie") <span class="text-danger">{{$message}}</span> @enderror
                 </div>
                 <div class="form-group">
-                    <input type="text" name="description" class="form-control @error('description') is-invalid @enderror" placeholder="Description de larticle">
+                    <input type="text" name="description" class="form-control @error('description') is-invalid @enderror" placeholder="Description de l'article">
                     @error("description") <span class="text-danger">{{$message}}</span> @enderror
                 </div>
                 <div class="form-group">
                     <textarea name="corps" id="editor" cols="30" rows="10" class="form-control @error('corps') is-invalid @enderror"></textarea>
                     @error("corps") <span class="text-danger">{{$message}}</span> @enderror
                 </div>
+                <div class="mb-5">
                 <button type="submit" class="mt-2 btn btn-primary">Creer l'article</button>
                 </div>
+              </div>
               </form>
             </div>
             <script>
                 CKEDITOR.replace( 'editor' );
-              </script>            
+            </script>            
 
             </div>
         </div>

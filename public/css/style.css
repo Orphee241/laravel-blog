@@ -1,7 +1,20 @@
 html{
     font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
 }
 
+body{
+    background-image: url("../img/bgtech2.jp");
+    background-size: cover;
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    z-index: 1;
+}
+
+nav{
+    display: none;
+}
 /* A propos */
 .about{
     margin-bottom: 10em;
@@ -38,5 +51,5 @@ html{
 }
 
 .form-group{
-    margin-top: 1em;
+    margin-top: 5em;
 }

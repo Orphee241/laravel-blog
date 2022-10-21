@@ -30,7 +30,8 @@ class PagesController extends Controller
 
     public function article($id){
         $article = Articles::find($id);
-        return view("pages.article")->with("article", $article);
+        $articles = Articles::orderBy("id", "desc")->get();
+        return view("pages.article")->with("article", $article)->with("articles",$articles);
     }
 
 
@@ -100,60 +101,6 @@ class PagesController extends Controller
 
     }
       
-    public function edit_article(Request $request, $id){
-        $article = Articles::find($id);
-        return view("pages.edit-article")->with("article", $article);
-        
-    }
-
-    public function editt_article(Request $request){
-        $article = Articles::find($request->id);
-
-        $request->validate([
-            "image" => "required",
-            "titre" => "required",
-            "description" => "required",
-            "corps" => "min:12",
-            "categorie" => "required",
-            "auteur" => "required",
-            "publication" => "required",
-        ],
-        [
-            "titre.required" =>"Le nom de l'article est obligatoire",
-            "image.required" =>"Veuillez uploder une image",
-            "description.required" =>"Veuillez ajouter une description",
-            "corps.min" =>"L'article doit contenir minimum 12 caractères",
-            "categorie.required" =>"Veuillez ajouter une catégorie",
-            "auteur.required" =>"Veuillez ajouter un auteur",
-            "publication.required" =>"Veuillez ajouter une date de publication"
-        ]
-        );
-
-        $name = $request->file("image")->getClientOriginalName();
-        $request->file("image")->move(public_path("img"), $name);
-        
-
-        $article->image = htmlentities($name);
-        $article->titre = htmlentities($request->titre);
-        $article->description = htmlentities($request->description);
-        $article->corps = htmlentities($request->corps);
-        $article->nom_categorie = htmlentities($request->categorie);
-        $article->auteur = htmlentities($request->auteur);
-        $article->date_publication = htmlentities($request->publication);
-        $article->update();
-      
-        return redirect("/")->with("status", "Article modifié avec succes!");
-
-    }
-
-    public function delete_article($id){
-        $article = Articles::find($id);
-        $article->delete();
-
-        return redirect("/add-article")->with("success", "Article supprimé");
-    }
-
-
 
     public function categories(){
         $categories = Categories::orderBy("nom", "asc")->get();

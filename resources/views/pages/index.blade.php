@@ -5,8 +5,8 @@
 @endsection
 @section('content')
     
-<div class="home container mt-4">
-    <h1>Bienvenue</h1>
+<div style="background-color: white; border-radius: 4px" class="home container mt-5 pt-2">
+    <h1 style="color:#211061">Bienvenue</h1>
     <h3 style="color:#211061">Les articles en vogue</h3>
     @if(Session::has("status"))
       <div class="alert alert-success col-lg-6">
@@ -21,8 +21,8 @@
             <div style="background-color: rgb(246, 246, 246)" class="card-body">
               <h5 style="margin-top: -0.5em; color: #211061" class="card-title">{!!html_entity_decode($article->titre)!!}</h5>
               <p style="margin-top: -0.5em" class="card-text">{!!html_entity_decode($article->description)!!}</p>
-              <p style="margin-top: -0.8em" class="card-date">Publié le: {!!html_entity_decode($article->date_publication)!!}</p>
-              <p style="margin-top: -0.8em" class="card-auteur">Par: <strong>{!!html_entity_decode($article->auteur)!!}</strong></p>
+              <p style="margin-top: -0.8em" class="card-date"><i style="color:#211061;" class="bi bi-calendar2-fill"></i> Publié le: {!!html_entity_decode($article->date_publication)!!}</p>
+              <p style="margin-top: -0.8em" class="card-auteur"><i style="color:#211061;" class="bi bi-person-fill"></i> Par: <strong>{!!html_entity_decode($article->auteur)!!}</strong></p>
               <a style="margin-top: -0.5em; border: none; background-color:#211061" href="/article/{{$article->id}}" class="btn btn-primary">Lire plus</a>
             </div>
         </div>

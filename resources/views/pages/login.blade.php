@@ -3,7 +3,7 @@
     Connexion
 @endsection
   @section('content')
-      
+  <div class="container mt-5">   
     <section class="vh-100">
     <div class="container-fluid h-custom">
       <div class="row  d-flex  align-items-center h-100">
@@ -53,4 +53,5 @@
       </div>
     </div>
     </section>
+  </div> 
   @endsection

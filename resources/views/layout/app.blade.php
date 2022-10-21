@@ -76,14 +76,14 @@
     <script src="/path/to/tinymce.min.js"></script>
 </head>
 <body>
-
+<div style="background-color: rgb(238, 236, 255)" class="bg">
   @include('layout.navbar')
   <div>
     {{--Debut contenu--}}
       @yield('content')
     {{--Fin contenu--}}
   </div>
-
+</div>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>

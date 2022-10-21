@@ -30,9 +30,9 @@
             <a class="nav-link text-white" href="{{URL::to("/contact")}}">Contact</a>
           </li>
         </ul>
-        <ul style="margin-left: 25%" class="navbar-nav">>
+        <ul style="margin-left: 25%" class="navbar-nav">
           <li style="" class="nav-item">
-            <a class="nav-link text-white" href="{{URL::to("/add-article")}}">Ajouter un produit</a>
+            <a class="nav-link text-white" href=""></a>
           </li>
         </ul>
       </div>

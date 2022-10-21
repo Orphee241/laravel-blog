@@ -5,7 +5,7 @@
 @endsection
 @section('content')
 
-<div class="signup container mt-4">
+<div class="signup container mt-5">
     <section class="">
     <div class="container-fluid h-custom">
       <div class="row  d-flex  align-items-center h-100">
@@ -31,7 +31,7 @@
               <input style="border-color: #211061;" type="password" name="password" id="form3Example4" class="form-control form-control-lg"
                 placeholder="Entrer votre mot de passe" />
             </div> 
-            <div class=" text-lg-start mt-4 pt-2">
+            <div class=" text-lg-start mt-2 pt-2">
               <button type="submit" class="btn btn-primary btn-lg"
                 style="padding-left: 1rem; background-color:#211061; border: none; padding-right: 1rem; padding-top: 3px; padding-bottom: 5px;">Inscription</button>
             </div>

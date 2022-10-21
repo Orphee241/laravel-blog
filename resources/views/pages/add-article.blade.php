@@ -48,7 +48,7 @@
         @error("publication") <span class="text-danger">{{$message}}</span> @enderror
     </div>
     <div class="form-group">
-        <select name="categorie" id="" class="@error('categorie') is-invalid @enderror">
+        <select name="categorie"  id="" class="form-control @error('categorie') is-invalid @enderror">
             <option value="" selected disabled>Catégorie</option>
             <option value="Frontend">Frontend</option>
             <option value="Backend">Backend</option>

@@ -1,11 +1,10 @@
 @extends('layout.adminApp')
 
 @section('titre')
-    Administration
+    Administration 
 @endsection
 
-@section('adminContent')
-   
+@section('adminContent')  
     <!-- PAGE CONTAINER-->
     <div class="page-container">
         <!-- MAIN CONTENT-->
@@ -15,9 +14,10 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="overview-wrap">
-                                <h2 class="title-1">Acceuil</h2>
-                                <button class="au-btn au-btn-icon au-btn--blue">
-                                    <a style="color: white" href="/admin/add-article"><i class="zmdi zmdi-plus"></i>Publier un article</button></a>
+                                <h2 style="color: #211061" class="">Acceuil</h2>
+                                <button style="background-color:#211061;" class="au-btn au-btn-icon au-btn--blue">
+                                    <a style="color: white" href="/admin/add-article"><i class="zmdi zmdi-plus"></i>Publier un article</a>
+                                </button>
                             </div>
                         </div>
                     </div>
