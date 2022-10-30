@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('uzers', function (Blueprint $table) {
             $table->id();
+            $table->string("pseudo")->unique();
+            $table->string("email")->unique();
+            $table->string("mot_de_passe");
             $table->timestamps();
         });
     }

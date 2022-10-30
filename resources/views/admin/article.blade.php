@@ -1,6 +1,6 @@
 @extends('layout.adminApp')
 @section('titre')
-    {{$article->titre}}
+<h2 style="color: #211061">{!!html_entity_decode($article->titre)!!}</h2>
 @endsection
 @section('adminContent')
     
@@ -8,7 +8,12 @@
     <div class="main-content ">
         <div class="section__content">
             <div class="container-fluid ">
-    <h2 style="color: #211061">{{$article->titre}}</h2>
+    <h2 style="color: #211061">{!!html_entity_decode($article->titre)!!}</h2>
+    @if(Session::has("succes"))
+      <div class="alert alert-danger col-lg-5">
+        {{Session::get("succes")}}
+      </div>
+    @endif
     <div class="row ml-1">
       <div class="mt-2 mb-5 col-lg-9 col-md-9 col-sm-12 ">
         <div style="min-height: 100%; border: none" class="row card pt-3">
@@ -26,6 +31,14 @@
         </div> 
       </div>  
   </div>
+  {{-- Commentaires --}}
+{{--   <div class="container">
+    @if($comments->count() < 0)
+
+    <h3 style="color:#211061">Commentaires({{$comments->count()}})</h3>
+
+    @endif
+  </div> --}}
   <div class="container"><h2 class="mt-3" style="color: #211061">Articles que vous pourriez aimer</h2></div>
   <div class="row ml-1">
     @foreach ($articles as $article)

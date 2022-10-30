@@ -1,19 +1,22 @@
 html{
-    font-family: 'Montserrat', sans-serif;
+    
     overflow-x: hidden;
+}
+@font-face {
+    font-family: Poppins;
+    src: url("../admin/fonts/poppins/poppins-v5-latin-regular.ttf");
+}
+*{
+
+    font-family: Poppins;
 }
 
 body{
-    background-image: url("../img/bgtech2.jp");
-    background-size: cover;
-    position: absolute;
-    width: 100vw;
-    height: 100%;
-    z-index: 1;
+    background-color: rgb(238, 236, 255);
 }
-
-nav{
+.success-popup{
     display: none;
+    
 }
 /* A propos */
 .about{
@@ -33,12 +36,17 @@ nav{
 }
 
 /* Signup */
-.signup{
-  
-    height: 50vh;
+.signup input{
+  border: 1px solid #211061;
+    
 }
 
-/* Signup */
+/* Login */
+.login input{
+    border: 1px solid #211061;
+}
+
+/* Contact */
 .contact{
   
     height: 83vh;
@@ -50,6 +58,4 @@ nav{
     margin-bottom: 15em;
 }
 
-.form-group{
-    margin-top: 5em;
-}
+

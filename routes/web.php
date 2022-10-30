@@ -47,8 +47,30 @@ Route::get('/category/{nom_category}', [PagesController::class, "category"]);
 /* Page inscription */
 Route::get('/signup', [PagesController::class, "signup"]);
 
+/* Page inscription */
+Route::post('/user-signup', [PagesController::class, "user_signup"]);
+
 /* Page connexion */
 Route::get('/login', [PagesController::class, "login"]);
+Route::post('/user-login', [PagesController::class, "user_login"]);
+
+/* Page déconnexion */
+Route::get('/logout', [PagesController::class, "logout"]);
+
+/* Page commentaires */
+Route::get('/add-comment/{id}', [PagesController::class, "add_comment"]);
+
+/* Page commentaires 2 */
+Route::get('/add-comment2/{article_id}/{comment_id}', [PagesController::class, "add_comment2"]);
+
+/* Page commentaires */
+Route::post('/create-comment/{id}', [PagesController::class, "create_comment"]);
+
+/* Page commentaires 2 */
+Route::post('/create-comment2/{article_id}/{comment_id}', [PagesController::class, "create_comment2"]);
+
+/* Delete comment */
+Route::get('/delete-comment/{article_id}/{comment_id}', [PagesController::class, "delete_comment"]);
 
 /* Page à propos */
 Route::get('/about', [PagesController::class, "about"]);
@@ -63,6 +85,8 @@ Route::get("/admin/users", [adminController::class, "users"]);
 Route::get("/admin/articles", [adminController::class, "articles"]);
 Route::get("/admin/article/{id}", [adminController::class, "article"]);
 Route::get("/admin/categories", [adminController::class, "categories"]);
+Route::get("/admin/add-category", [adminController::class, "add_category"]);
+Route::post("/admin/create-category", [adminController::class, "create_category"]);
 Route::get("/admin/stats", [adminController::class, "stats"]);
 Route::get("/admin/category/{nom_categorie}", [adminController::class, "category"]);
 Route::get("/admin/add-article", [adminController::class, "add_article"]);

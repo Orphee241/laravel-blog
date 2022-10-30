@@ -3,27 +3,41 @@
     Connexion
 @endsection
   @section('content')
-  <div class="container mt-5">   
+  <div class="login container mt-5">   
     <section class="vh-100">
     <div class="container-fluid h-custom">
       <div class="row  d-flex  align-items-center h-100">
         <div class="col-md-8 col-lg-6">
-          <form class="" action="/connexion" method="post">
+          <form class="" action="{{URL::to("/user-login")}}" method="POST">
+            @csrf
             <h2 style="color:#211061" class="mb-4 titre-connexion">Connexion</h2>
+            @if(Session::has("success"))
+            <div class="alert alert-success mt-2 col-lg-12">
+              {{Session::get("success")}}
+            </div>
+          @endif
+          {{-- Message error --}}
+          @if(Session::has("error"))
+            <div class="alert alert-danger mt-2 col-lg-12">
+              {{Session::get("error")}}
+            </div>
+          @endif
             <div class="displayError">
             </div>
             <!-- Email input -->
             <div class="form-outline mb-4">
                 <label style="color: #211061" class="form-label" for="form3Example3">Adresse email</label>
-              <input  style="border-color: #211061;" type="email" name="email" id="form3Example3" class="form-control form-control-lg"
+              <input  style=";" type="email" name="email" id="form3Example3" class=" @error('email') is-invalid @enderror form-control"
                 placeholder="Entrer une adresse email valide" />
+                @error("email") <span class="text-danger">{{$message}}</span> @enderror
             </div>
   
             <!-- Password input -->
             <div class="form-outline mb-3">
                 <label style="color: #211061" class="form-label" for="form3Example4">Mot de passe</label>
-              <input  style="border-color: #211061;" type="password" name="password" id="form3Example4" class="form-control form-control-lg"
+              <input  style=";" type="password" name="password" id="form3Example4" class="@error('password') is-invalid @enderror form-control "
                 placeholder="Entrer votre mot de passe" />
+                @error("password") <span class="text-danger">{{$message}}</span> @enderror
             </div>
   
             <div class="d-flex justify-content-between align-items-center">
@@ -40,7 +54,7 @@
             <div class=" text-lg-start mt-4 pt-2">
               <button type="submit" class="btn btn-primary btn-lg"
                 style="padding-left: 1rem; background-color:#211061; border: none; padding-right: 1rem; padding-top: 3px; padding-bottom: 5px;">Connexion</button>
-              <p class="small fw-bold mt-2 pt-1 mb-0">Vous n'avez pas de compte ? <a style="color:#211061" href="/inscription"
+              <p class="small fw-bold mt-2 pt-1 mb-0">Vous n'avez pas de compte ? <a style="color:#211061" href="{{URL::to('pages.signup')}}"
                   class="">Inscription</a></p>
             </div>
   

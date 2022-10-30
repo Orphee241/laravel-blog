@@ -5,6 +5,7 @@
 @section('content')
     
 <div class="container mt-4">
+  @if($articles->count() > 0)
     <h3 style="color: #211061">Tous les articles ({{$articles->count()}})</h3>
     <div class="row">
       @foreach ($articles as $article)
@@ -22,6 +23,13 @@
       </div> 
       @endforeach   
   </div>
+  @else
+    <div class="row">
+      <div class="col-lg-7">
+        <h2 style="color: #211061; border-radius: 4px" class="pb-2 border text-center">Aucun article disponible pour le moment</h2>
+      </div>
+    </div>
+  @endif
   <div style="margin-top: 2em">
   
   </div>

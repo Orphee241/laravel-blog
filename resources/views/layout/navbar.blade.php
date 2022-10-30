@@ -17,9 +17,15 @@
           <li class="nav-item">
             <a class="nav-link text-white" href="{{URL::to("/categories")}}">Catégories</a>
           </li>
+          @if(session("uzer"))
+            <li class="nav-item">
+              <a class="nav-link text-white" href="{{URL::to("/logout")}}">Déconnexion</a>
+            </li>   
+          @else
             <li class="nav-item">
               <a class="nav-link text-white" href="{{URL::to("/login")}}">Se connecter</a>
-            </li>  
+            </li>
+          @endif  
           <li class="nav-item">
             <a class="nav-link text-white" href="{{URL::to("/signup")}}">S'inscrire</a>
           </li>

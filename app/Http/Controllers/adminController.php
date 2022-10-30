@@ -32,6 +32,41 @@ class AdminController extends Controller
         return view('admin.categories')->with("categories", $categories);
     }
 
+    public function add_category(){
+        
+        return view('admin.add-category');
+    }
+
+    public function create_category(Request $request){
+        
+        $request->validate([
+            "nom" => "required|min:3|unique:Categories",
+        ],
+        [
+            "nom.required" =>"Veuillez entrer le nom de la catégorie",
+            "nom.min" =>"Le nom doit contenir au minimum 3 caractères",
+            "nom.unique" =>"Cette catégorie existe déjà",
+        ]
+
+        );
+
+            $nom_categorie = $request->nom;
+
+        if(isset($nom_categorie)){
+            
+            $categorie = new Categories;
+
+            $categorie->nom = htmlentities($nom_categorie);
+            $categorie->save();
+            
+            return redirect("/admin/categories")->with("success", "Votre article a été crée avec succès");
+        }
+        else
+        {
+            return redirect("/admin/add-category")->with("error", "Veuillez entrer le nom de la catégorie !");
+        }
+    }
+
     public function stats(){
         return view("admin.stats");
     }
@@ -84,7 +119,6 @@ class AdminController extends Controller
         if(isset($image, $titre, $description, $nom_categorie, $corps, $auteur, $date_publication)){
             
             $article = new Articles;
-    
             $article->image = htmlentities($image);
             $article->titre = htmlentities($titre);
             $article->description = htmlentities($description);

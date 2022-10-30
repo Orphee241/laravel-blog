@@ -48,7 +48,7 @@
         @error("description") <span class="text-danger">{!!$message!!}</span> @enderror
     </div>
     <div class="form-group">
-        <textarea  name="corps" id="editor" cols="30" rows="10" class="form-control @error('corps') is-invalid @enderror">
+        <textarea  name="corps" id="myTextarea" cols="30" rows="10" class="form-control @error('corps') is-invalid @enderror">
             {!!html_entity_decode($article->corps)!!}
         </textarea>
         @error("corps") <span class="text-danger">{{$message}}</span> @enderror
