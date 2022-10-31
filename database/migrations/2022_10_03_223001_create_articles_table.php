@@ -13,6 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
+        if(!Schema::hasTable("articles")){
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->string("image");
@@ -25,6 +26,7 @@ return new class extends Migration
             $table->timestamp("updated_at")->nullable();
             $table->timestamp("created_at")->nullable();
         });
+        }
 
     }
 

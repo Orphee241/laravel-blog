@@ -13,6 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
+        if(!Schema::hasTable("comments")){
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
             $table->index("article_id");
@@ -22,6 +23,7 @@ return new class extends Migration
             $table->timestamp("updated_at")->nullable();
             $table->timestamp("created_at")->nullable();
         });
+        }
     }
 
     /**

@@ -13,6 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
+        if(!Schema::hasTable("replies")){
         Schema::create('replies', function (Blueprint $table) {
             $table->id();
             $table->string("auteur");
@@ -24,6 +25,7 @@ return new class extends Migration
             $table->timestamp("created_at")->nullable();
             $table->timestamp("updated_at")->nullable();
         });
+        }
     }
 
     /**
