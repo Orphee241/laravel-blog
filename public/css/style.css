@@ -1,6 +1,7 @@
 html{
     
     overflow-x: hidden;
+    overflow-x: hidden;
 }
 @font-face {
     font-family: Poppins;
@@ -9,6 +10,7 @@ html{
 *{
 
     font-family: Poppins;
+    overflow-x: hidden;
 }
 
 body{
