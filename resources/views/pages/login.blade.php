@@ -10,7 +10,7 @@
         <div class="col-md-8 col-lg-6">
           <form class="" action="{{URL::to("/user-login")}}" method="POST">
             @csrf
-            <h2 style="color:#211061" class="mb-4 titre-connexion">Connexion</h2>
+            <h2 style="color:#211061; font-weight:800" class="mb-4 titre-connexion">Connexion</h2>
             @if(Session::has("success"))
             <div class="alert alert-success mt-2 col-lg-12">
               {{Session::get("success")}}
@@ -60,7 +60,7 @@
   
           </form>
         </div>
-        <div class="image-connexion col-md-9 col-lg-6 col-xl-5">
+        <div class="logoLogin col-md-9 col-lg-6 col-xl-5">
             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
               class="img-fluid" alt="Sample image">
           </div>

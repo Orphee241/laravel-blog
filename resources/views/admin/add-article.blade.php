@@ -57,7 +57,7 @@
                     @error("description") <span class="text-danger">{{$message}}</span> @enderror
                 </div>
                 <div class="form-group">
-                    <textarea name="corps" id="myTextarea" cols="30" rows="10" class="form-control @error('corps') is-invalid @enderror"></textarea>
+                    <textarea name="corps" id="myTextarea"  class="form-control @error('corps') is-invalid @enderror"></textarea>
                     @error("corps") <span class="text-danger">{{$message}}</span> @enderror
                 </div>
                 <div class="mb-5">

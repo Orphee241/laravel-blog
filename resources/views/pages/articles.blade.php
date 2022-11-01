@@ -4,12 +4,12 @@
 @endsection
 @section('content')
     
-<div class="container mt-4">
+<div style="background-color: rgb(255, 255, 255); border-radius: 4px" class="container mt-5">
   @if($articles->count() > 0)
-    <h3 style="color: #211061">Tous les articles ({{$articles->count()}})</h3>
+    <h2 class="pt-3" style="color: #211061, font-weight: 800">Tous les articles ({{$articles->count()}})</h2>
     <div class="row">
       @foreach ($articles as $article)
-      <div class="mt-4 col-lg-4 col-md-6 col-sm-12 ">
+      <div class="mt-2 col-lg-4 col-md-6 col-sm-12 ">
         <div style="min-height: 100%" class="card">
           <img src="{{URL::to('/')}}/img/{{$article->image}}" class="card-img-top" alt="...">
             <div style="background-color: rgb(246, 246, 246)" class="card-body">

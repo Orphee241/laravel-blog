@@ -20,7 +20,7 @@
                 @endif  --}}
           <form class="" action="{{URL::to('/user-signup')}}" method="POST">
             @csrf
-            <h2 style="color:#211061" class="mb-4 titre-connexion">Inscription</h2>
+            <h2 style="color:#211061; font-weight:800" class="mb-4 titre-connexion">Inscription</h2>
             @if(Session::has("success"))
               <div class="col-lg-12 alert alert-success">
                   {{Session::get('success')}}
@@ -60,7 +60,7 @@
   
           </form>
         </div>
-        <div class="image-connexion col-md-9 col-lg-6 col-xl-5">
+        <div class="logoSignin col-md-9 col-lg-6 col-xl-5">
             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
               class="img-fluid" alt="Sample image">
           </div>

@@ -4,7 +4,7 @@ html{
 }
 @font-face {
     font-family: Poppins;
-    src: url("../admin/fonts/poppins/poppins-v5-latin-regular.ttf");
+    src: url("../admin/fonts/poppins/poppins-v5-latin-regultf");
 }
 *{
 
@@ -56,6 +56,44 @@ body{
 .add-article{
     height: 90vh;
     margin-bottom: 15em;
+}
+
+/* Media 1030 */
+
+@media screen and (max-width: 1030px) {
+    .logoContact{
+        display: none;
+    }
+    .logoLogin{
+        display: none;
+    }
+    .logoSignin{
+        display: none;
+    }
+    .logoAbout{
+        display: none;
+    }
+    .navbar .nav-item{
+        padding: 0 1.5em;
+    }
+}
+
+/* Media 1130 */
+
+@media screen and (max-width: 1120px) {
+    .headerLogo{
+        display: none;
+    }
+
+}
+
+/* Media 460 */
+
+@media screen and (max-width: 460px) {
+    .creerCompte{
+        margin-left: 3em;
+    }
+
 }
 
 

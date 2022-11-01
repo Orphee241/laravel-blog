@@ -5,7 +5,7 @@
 @section('content')
     
 <div  style="background-color: white; border-radius: 4px;" class="container  mt-5">
-    <h2 class="pt-3" style="color: #211061">{!!html_entity_decode($article->titre)!!}</h2>
+    <h2 class="pt-4" style="color: #211061; font-weight:800">{!!html_entity_decode($article->titre)!!}</h2>
     <p style="margin-top: 1em; color: rgb(9, 22, 38)" class="card-date"><i style="color:#211061;" class="bi bi-calendar2-fill"></i> Publié le: {{$article->date_publication}}</p>
     <p style="margin-top: -0.8em; color: rgb(9, 22, 38)" class="card-auteur"><i style="color:#211061;" class="bi bi-person-fill"></i> Par : <span style="color:rgb(9, 22, 38)"><strong>{{$article->auteur}}</strong></span></p>
     @if(Session::has("success"))
@@ -120,7 +120,7 @@
     </div>
   </div>
 
-  <div class="container"><h2 class="mt-5" style="color: #211061; margin-top: 3em">Articles que vous pourriez aimer</h2></div>
+  <div class="container"><h2 class="mt-5" style="color: #211061; margin-top: 3em; font-weight:800">Articles que vous pourriez aimer</h2></div>
   <div class="pb-5 row pl-1">
     @foreach ($articles as $article)
       <div class="mt-4 col-lg-4 col-md-6 col-sm-12 ">
