@@ -34,14 +34,14 @@ body{
 /* Section header home */
 
 .colHeader{
-    padding: 0 2em;
+    padding: 0 4em;
 }
 
 .creerCompte{
-    transform: translateX(-1em);
+    
 }
 .voirAstuces{
-    transform: translateX(-1em);
+    transform: translateX(em);
 }
 
 /* Categories */
@@ -105,13 +105,19 @@ body{
 /* Media 460 */
 
 @media screen and (max-width: 460px) {
+    /* Section header home */
+
+    .colHeader{
+        padding: 0 2em;
+    }
+
     .creerCompte{
-        margin-left: 1em;
+
     }
     .voirAstuces{
-        margin-left: 1em;
-        
+        transform: translateX(em);
     }
+
 
 }
 
