@@ -5,14 +5,14 @@
 @endsection
 @section('content')
 <div class="row header">
-  <div class="col-lg-5 col-md-12 col-sm-12">
-    <h1 style="font-weight:900; color: #211061" class="px-5 mt-5">Apprenez plusieurs astuces du digital Grâce à Digitarea</h1>
-    <p style="font-size: 20px" class="pl-5">
+  <div class="colHeader col-lg-5 col-md-12 col-sm-12">
+    <h1 style="font-weight:900; color: #211061" class="h1Home mt-5">Apprenez plusieurs astuces du digital Grâce à Digitarea</h1>
+    <p style="font-size: 20px" class="">
       Allez encore plus loin en découvrant nos astuces sur la résolution des problèmes que l'on
        rencontre au quotidien dans le <span style="font-weight: 700; color:#211061">Développement web</span>, l'<span style="font-weight: 700; color:#211061">Infographie</span>, 
        <span style="font-weight: 700; color:#211061">Marketing digital, </span>la <span style="font-weight: 700; color:#211061">MAO...</span>
     </p>
-    <button style="border: 1px solid #211061; color: #211061, font-weight: 700" class="ml-5 mt-2 btn"><a style="text-decoration: none; font-weight:600; color:#211061" href="">Découvrir nos astuces</a></button>
+    <button style="border: 1px solid #211061; color: #211061, font-weight: 700" class="voirAstuces mt-2 btn"><a style="text-decoration: none; font-weight:600; color:#211061" href="">Découvrir nos astuces</a></button>
     <button style="border: 1px solid #211061; background-color:#211061;" class="creerCompte mt-2 btn"><a style="text-decoration: none; font-weight:600; color:#ffffff" href="">Je crée mon compte</a></button>
   </div>
   <div class="d-flex justify-content-center col-lg-7 pt-5">
@@ -31,7 +31,7 @@
       @foreach($articles as $article)
       <div class="mt-3 mb-3 col-lg-4 col-md-6 col-sm-12 ">
         <div style="min-height: 100%" class="card">
-          <img style="overflow: hidden;height: 200px;" src="{{URL::to('/')}}/img/{{$article->image}}" class="card-img-top" alt="...">
+          <img style="overflow: hidden;height: 200px;" src="{{asset('/img')}}/{{$article->image}}" class="card-img-top" alt="...">
             <div style="background-color: rgb(246, 246, 246)" class="card-body">
               <h5 style="margin-top: -0.5em; color: #211061" class="card-title">{!!html_entity_decode($article->titre)!!}</h5>
               <p style="margin-top: -0.5em" class="card-text">{!!html_entity_decode($article->description)!!}</p>

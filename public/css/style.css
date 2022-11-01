@@ -1,7 +1,7 @@
 html{
     
     overflow-x: hidden;
-    overflow-x: hidden;
+
 }
 @font-face {
     font-family: Poppins;
@@ -10,11 +10,11 @@ html{
 *{
 
     font-family: Poppins;
-    overflow-x: hidden;
 }
 
 body{
     background-color: rgb(238, 236, 255);
+    overflow-x: hidden;
 }
 .success-popup{
     display: none;
@@ -29,6 +29,19 @@ body{
 .home{
     margin-top: 3em;
     margin-bottom: 3em;
+}
+
+/* Section header home */
+
+.colHeader{
+    padding: 0 2em;
+}
+
+.creerCompte{
+    transform: translateX(-1em);
+}
+.voirAstuces{
+    transform: translateX(-1em);
 }
 
 /* Categories */
@@ -93,7 +106,11 @@ body{
 
 @media screen and (max-width: 460px) {
     .creerCompte{
-        margin-left: 3em;
+        margin-left: 1em;
+    }
+    .voirAstuces{
+        margin-left: 1em;
+        
     }
 
 }

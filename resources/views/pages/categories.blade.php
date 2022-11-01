@@ -24,7 +24,7 @@
       </div>
     @endif
     <div class="image-categorie mt-4 d-grid justify-content-center col-lg-6 col-md-6 col-sm-12">
-      <img src="{{url('/img/categorieflat.png')}}" width=450px alt="">
+      <img src="{{asset('/img/categorieflat.png')}}" width=450px alt="">
     </div>
   </div>
 </div>

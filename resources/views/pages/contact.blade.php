@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="logoContact col-lg-5">
-        <img style="margin-top: -3.3em" src="{{URL::to("/")}}/img/contact-center.png" width="350px" alt="">
+        <img style="margin-top: -3.3em" src="{{asset('/img/contact-center.png')}}" width="350px" alt="">
     </div>
   </div>
 </div>

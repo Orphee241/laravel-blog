@@ -16,7 +16,7 @@
         </div>
     </div>
     <div style="margin-top: 1.9em" class="logoAbout col-lg-5">
-      <img style="border-radius: 4px; margin-top: -2em" src="{{URL::to('/')}}/img/about-us.png" width=350px alt="">
+      <img style="border-radius: 4px; margin-top: -2em" src="{{asset('/img/about-us.png')}}" width=350px alt="">
     </div>
   </div>
 </div>

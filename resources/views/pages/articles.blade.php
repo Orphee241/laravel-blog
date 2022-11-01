@@ -11,7 +11,7 @@
       @foreach ($articles as $article)
       <div class="mt-2 col-lg-4 col-md-6 col-sm-12 ">
         <div style="min-height: 100%" class="card">
-          <img src="{{URL::to('/')}}/img/{{$article->image}}" class="card-img-top" alt="...">
+          <img src="{{asset('/img')}}/{{$article->image}}" class="card-img-top" alt="...">
             <div style="background-color: rgb(246, 246, 246)" class="card-body">
               <h5 style="margin-top: -0.5em; color: #211061" class="card-title">{!!html_entity_decode($article->titre)!!}</h5>
               <p style="margin-top: -0.5em" class="card-text">{!!html_entity_decode($article->description)!!}</p>

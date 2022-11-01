@@ -14,7 +14,7 @@
     <div class="row">
       <div class="my-2  col-lg-9 col-md-9 col-sm-12 ">
         <div style="min-height: 100%; border: none" class="card">
-          <img src="{{URL::to('/')}}/img/{{$article->image}}" class="card-img-top" alt="...">
+          <img src="{{asset('/img')}}/{{$article->image}}" class="card-img-top" alt="...">
             <div style="border: none" class="card-body">
               <p style="font-size: 18px; margin-top: -0.5em; color: rgb(9, 22, 38)" class="mt-3 mb-4 card-text">{!!html_entity_decode($article->corps)!!}</p><br>
               @if(session()->has("uzer"))
@@ -126,7 +126,7 @@
       <div class="mt-4 col-lg-4 col-md-6 col-sm-12 ">
         <div style="min-height: 100%; border-radius: 4px" class="card">
           <div  class="img">
-          <img style="overflow: hidden;height: 200px;" src="{{URL::to('/')}}/img/{{$article->image}}" class="card-img-top" alt="...">
+          <img style="overflow: hidden;height: 200px;" src="{{asset('/img')}}/{{$article->image}}" class="card-img-top" alt="...">
           </div>
             <div style="background-color: rgb(246, 246, 246)" class="card-body">
               <h3 style="margin-top: 0.5em; color: #211061" class="card-title">{!!html_entity_decode($article->titre)!!}</h3>
