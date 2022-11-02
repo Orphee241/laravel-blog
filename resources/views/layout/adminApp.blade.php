@@ -90,6 +90,9 @@
   <script type="text/javascript">
   tinymce.init({
     selector: '#myTextarea',
+    mobile:{
+        menubar: true
+    },
     width: 600,
     height: 300,
     plugins: [

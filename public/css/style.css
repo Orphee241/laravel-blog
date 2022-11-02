@@ -37,12 +37,33 @@ body{
     padding: 0 4em;
 }
 
+.creerCompte a{
+    color: #211061;
+}
 .creerCompte{
+    border: 1px solid #211061;
+    color: #211061;
     
 }
-.voirAstuces{
-    transform: translateX(em);
+.creerCompte:hover{
+    border: 1px solid #211061 !important;
+    color: #ffffff !important;
+    background-color: #211061 !important;
+    
 }
+
+.voirAstuces{
+    background-color: #211061;
+    border: 1px solid #211061;
+    color:white;
+    
+}
+.voirAstuces:hover{
+    border: 1px solid #211061 !important;
+    color: #211061 !important;
+    
+}
+
 
 /* Categories */
 .categories{
@@ -109,13 +130,6 @@ body{
 
     .colHeader{
         padding: 0 2em;
-    }
-
-    .creerCompte{
-
-    }
-    .voirAstuces{
-        transform: translateX(em);
     }
 
 

@@ -12,7 +12,7 @@
             <a class="nav-link text-white active" aria-current="page" href="{{URL::to("/")}}">Accueil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="{{URL::to("/articles")}}">Astuces</a>
+            <a class="nav-link text-white" href="{{URL::to("/articles")}}">Tutos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white" href="{{URL::to("/categories")}}">Catégories</a>

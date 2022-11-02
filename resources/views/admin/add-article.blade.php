@@ -56,7 +56,7 @@
                     <input type="text" name="description" class="form-control @error('description') is-invalid @enderror" placeholder="Description de l'article">
                     @error("description") <span class="text-danger">{{$message}}</span> @enderror
                 </div>
-                <div class="form-group">
+                <div style="overflow: auto" class="form-group">
                     <textarea name="corps" id="myTextarea"  class="form-control @error('corps') is-invalid @enderror"></textarea>
                     @error("corps") <span class="text-danger">{{$message}}</span> @enderror
                 </div>
