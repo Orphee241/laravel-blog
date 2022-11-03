@@ -327,7 +327,7 @@ class PagesController extends Controller
 
     public function articles(){ 
         $articles = Articles::orderBy("titre", "desc")
-                    ->paginate(6);
+                    ->paginate(30);
         return view("pages.articles")->with("articles", $articles);
     }
       

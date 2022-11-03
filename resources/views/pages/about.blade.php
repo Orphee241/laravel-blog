@@ -3,7 +3,7 @@
     A propos de Digitarea
 @endsection
 @section('content')
-<div class="about container mt-4">
+<div class="about container">
   <h2 style="color:#211061; font-weight:800">Qui sommes-nous ?</h2>
   <div class="row">
     <div style="height: 95%" class="col-lg-7 mt-4 slider-item-show2 slider-nav-outside slider-nav-dark slider-nav-sm slider-nav-visible slider-nav-page slider-item-snapstart slider-nav-autoplay slider-nav-autopause slider-item-ratio slider-item-ratio-contain slider-item-ratio-32x9 bg-white shadow-lg py-3 px-4 " data-slider-nav-autoplay-interval="2000">
@@ -19,5 +19,12 @@
     </div>
   </div>
 </div>
+<footer style="background-color: #13083b" class="aboutFooter container-fluid pt-2 aboutFooter ">
+  <div class="row">
+    <div class="py-4 col-lg-12">
+      <p class="text-center text-white">Copyright &copy; DIgitarea {{date("Y")}}</p>
+      <p class="text-center text-white">Conception GONA</p>
+    </div>
+  </footer>
 @endsection
 

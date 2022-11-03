@@ -1,20 +1,20 @@
 @extends('layout.app')
 @section('title')
-    Tous les articles | Digitarea 
+    Tous les tutoriels | Digitarea 
 @endsection
 @section('content')
-<div class="container">
+<div class="container articles">
   <div style="transform: translateY(1.5em)" class="row">
     <div class="col-lg-7"></div>
     <div class="col-lg-5">
       <input placeholder="Rechercher un article" style="border: 1px solid #211061; border-radius:4px; width: 18em; padding: 0.4em 12px" type="search" name="search" id="search">
-      <button style="padding: 7px 8px; background-color: #211061; color:white" class="btn" type="submit">Rechercher</button>
+      <button style="padding: 7px 8px; background-color: #211061; color:white" class="search btn" type="submit">Rechercher</button>
     </div>
   </div>
 </div>
-<div style="background-color: rgb(255, 255, 255); border-radius: 4px" class="container mt-5">
+<div style="background-color: rgb(255, 255, 255)" class=" container pb-3 mt-5">
   @if($articles->count() > 0)
-    <h2 class="pt-3" style="color: #211061; font-weight: 800">Tous les articles ({{$articles->count()}})</h2>
+    <h2 class="pt-3" style="color: #211061; font-weight: 800">Tous les tutoriels ({{$articles->count()}})</h2>
     <div class="row">
       @foreach ($articles as $article)
       <div class="mt-3 col-lg-4 col-md-6 col-sm-12 ">
@@ -42,6 +42,13 @@
   
   </div>
 </div>
+<footer style="background-color: #13083b" class="container-fluid  articlesFooter ">
+  <div class="row">
+    <div class="py-4 col-lg-12">
+      <p class="text-center text-white">Copyright &copy; DIgitarea {{date("Y")}}</p>
+      <p class="text-center text-white">Conception GONA</p>
+    </div>
+  </footer>
 <script>
   $("#search").keyup(function() {
     let search = $("#search").val();

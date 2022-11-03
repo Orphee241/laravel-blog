@@ -3,7 +3,7 @@
     Connexion
 @endsection
   @section('content')
-  <div class="login container mt-5">   
+  <div class="login signup container">   
     <section class="vh-100">
     <div class="container-fluid h-custom">
       <div class="row  d-flex  align-items-center h-100">
@@ -68,4 +68,11 @@
     </div>
     </section>
   </div> 
+  <footer style="background-color: #13083b" class="container-fluid pt-2 signupFooter ">
+    <div class="row">
+      <div class="py-4 col-lg-12">
+        <p class="text-center text-white">Copyright &copy; DIgitarea {{date("Y")}}</p>
+        <p class="text-center text-white">Conception GONA</p>
+      </div>
+    </footer>
   @endsection

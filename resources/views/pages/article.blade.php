@@ -140,4 +140,11 @@
       @endforeach   
   </div>   
 </div>
+<footer style="background-color: #13083b" class="container-fluid pt-2 homeFooter ">
+  <div class="row">
+    <div class="py-4 col-lg-12">
+      <p class="text-center text-white">Copyright &copy; DIgitarea {{date("Y")}}</p>
+      <p class="text-center text-white">Conception GONA</p>
+    </div>
+  </footer>
 @endsection

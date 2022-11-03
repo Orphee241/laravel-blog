@@ -6,7 +6,7 @@ Apprenez gratuitement des tutos en Développement web, Infographie, Marketing di
 @section('content')
 <div class="row header">
   <div class="colHeader col-lg-5 col-md-12 col-sm-12">
-    <h1 style="font-weight:900; color: #211061" class="h1Home mt-5">Découvrez plusieurs tutoriels du digital Grâce à Digitarea</h1>
+    <h1 style="font-weight:900; color: #211061" class="h1Home mt-5">Découvrez plusieurs tutoriels sur le digital Grâce à Digitarea</h1>
     <p style="font-size: 20px" class="">
       Apprenez gratuitement des tutos dans plusieurs domaines : <span style="font-weight: 700; color:#211061">Développement web</span>, <span style="font-weight: 700; color:#211061">Infographie</span>, 
        <span style="font-weight: 700; color:#211061">Marketing digital, </span> <span style="font-weight: 700; color:#211061">MAO...</span>
@@ -18,17 +18,20 @@ Apprenez gratuitement des tutos en Développement web, Infographie, Marketing di
     <img class="headerLogo ml-4 pl-5" src="{{URL::to("/img/digitareaheader3.png")}}" alt="">
   </div>
 </div>   
-<div style="background-color: rgb(255, 255, 255); border-radius: 4px; padding: 0 3em" class="home container-fluid mt-5 pt-2">
+<div style="background-color: rgb(255, 255, 255)" class="container-fluid pt-2 home ">
     <h2 class="pt-3" style="color:#211061; font-weight:800">Qui sommes-nous ?</h2>
-    <div class="col-lg-8">
-    <p class="" style="font-size: 18px; text-align: justify">
-      <strong>Digitarea</strong> est une plateforme  qui offre une diversité d'astuces sur des thèmes relatifs au digital: infographie, montage vidéo, développement web, marketing digital, MAO... <br>
-                Elle a été crée en septembre 2022 par Glen Orphée NZIENGUI - AKOUMBOU (GONA). <br>
-                Notre principale mission est de partager nos connaissances avec toutes personnes passionnée du domaine et désireuse d'apprendre de nouvelles choses.
-                
-    </p>
-  </div>
-    <h2 class="mt-5" style="color:#211061; font-weight:800">Tutos récents</h2>
+    <div class="row">
+      <div class="homeAbout col-lg-8 col-md-12 col-sm-12" style="font-size: 18px; ">
+        <strong>Digitarea</strong> est une plateforme  qui offre une diversité d'astuces sur des thèmes relatifs au digital: infographie, montage vidéo, développement web, marketing digital, MAO... <br>
+        Notre principale mission est de partager nos connaissances avec toutes personnes passionnée du domaine et désireuse d'apprendre de nouvelles choses.             
+      </div>
+      <div style="padding-left: 9em; margin-top: -1em" class="interrogation justify-content-center col-lg-4">
+        <img class="" width="200px" src="{{asset("/img/interrogation.png")}}" alt="">
+      </div>
+    </div>
+</div>
+<div style="background-color: rgb(255, 255, 255)" class="home2 container-fluid pt-2">
+    <h2 class="mt-3" style="color:#211061; font-weight:800">Tutos récents</h2>
     @if(session()->has("uzer"))
     <div class="success-popup alert alert-success col-lg-6">
       {{session()->get("uzer"). " " ."vous êtes connecté"}}
@@ -37,7 +40,7 @@ Apprenez gratuitement des tutos en Développement web, Infographie, Marketing di
     @if($articles->count() > 0)
     <div class="pb-5 row"> 
       @foreach($articles as $article)
-      <div class="mt-3 mb-3 col-lg-4 col-md-6 col-sm-12 ">
+      <div class="mt-3 col-lg-4 col-md-6 col-sm-12 ">
         <div style="min-height: 100%" class="card">
           <img style="overflow: hidden;height: 200px;" src="{{asset('/img')}}/{{$article->image}}" class="card-img-top" alt="...">
             <div style="background-color: rgb(246, 246, 246)" class="card-body">
@@ -54,9 +57,56 @@ Apprenez gratuitement des tutos en Développement web, Infographie, Marketing di
   @else
   <div class="row">
     <div class="col-lg-7">
-      <h3 style="color: #211061; border-radius: 4px" class="pb-2 border text-center">Aucun article disponible pour le moment</h3>
+      <h3 style="color: #211061; border-radius: 4px" class="border text-center">Aucun article disponible pour le moment</h3>
     </div>
   </div>
   @endif
 </div>
+<div style="background-color: rgb(255, 255, 255)" class="container-fluid pt-2 home ">
+  <h2 class="pt-3" style="color:#211061; font-weight:800">Contactez-nous</h2>
+  <div class="row">
+    <div class="homeAbout col-lg-8 col-md-12 col-sm-12" style="font-size: 18px; ">
+      Vous avez des interrogations ? vous souhaitez entrer en contact avec nous ? Joignez-nous via les canaux ci-dessous.
+      <div class="mt-4">
+            <div class="col-lg-12 justify-content-center">
+                <a style="text-decoration: none; color: #211061" href="httpss://wa.me/+24177187894"><i class="fa-brands fa-whatsapp mb-4" style="font-size: 20px; color: #211061"></i><span style="font-size: 20px; color: #211061"></i> Whatsapp</a>
+            </div>
+            <div class="col-lg-12 justify-content-center">
+                <i class="fa-solid fa-envelope mb-4" style="font-size: 20px; color: #211061"></i><span style="font-size: 20px; color: #211061;"> <a style="font-size: 20px; color: #211061; text-decoration:none" href="mailto:digitarea@gmail.com">digitarea@gmail.com</a></span>
+            </div>
+            <div class="col-lg-12 justify-content-center">
+                <i class="fa-solid fa-phone mb-4" style="font-size: 20px; color: #211061"></i><span style="font-size: 20px; color: #211061"></i><span style="font-size: 20px; color: #211061"></i> <span style="font-size: 20px; color: #211061"><a style="text-decoration: none; color:#211061" href="tel:+24177187894">+241 77 18 78 94</a> / <a style="text-decoration: none; color:#211061" href="te:+24162102805">+241 62 10 28 05</a></span>
+            </div>
+    </div>
+    </div>
+    <div style="padding-left: em; margin-top: -1em" class="interrogation justify-content-center col-lg-4">
+      <img class="" width="400px" src="{{asset("/img/cntakt.png")}}" alt="">
+    </div>
+  </div>
+</div>
+<footer style="background-color: #13083b" class="container-fluid pt-2 homeFooter ">
+  <div class="row">
+    <div class="py-4 col-lg-12">
+      <p class="text-center text-white">Copyright &copy; DIgitarea {{date("Y")}}</p>
+      <p class="text-center text-white">Conception GONA</p>
+    </div>
+  </footer>
+</div>
+<script>
+  $(document).ready(function () {
+
+$('.first-button').on('click', function () {
+
+  $('.animated-icon1').toggleClass('open');
+});
+$('.second-button').on('click', function () {
+
+  $('.animated-icon2').toggleClass('open');
+});
+$('.third-button').on('click', function () {
+
+  $('.animated-icon3').toggleClass('open');
+});
+});
+</script>
 @endsection

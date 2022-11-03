@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     
-<div class="categories container mt-4">
+<div class="categories container">
   <div style="min-height: 100%" class="row justify-content-center"> 
     @if($categories->count() > 0)
     <div style="background-color: white" class="mt-3 col-lg-5 rounded swiffy-slider slider-item-show5 slider-nav-outside slider-nav-dark slider-nav-sm slider-nav-visible slider-nav-page slider-item-snapstart slider-nav-autoplay slider-nav-autopause slider-item-ratio slider-item-ratio-contain slider-item-ratio-32x9 bg- shadow-lg py-3 py-lg-4" data-slider-nav-autoplay-interval="2000">
@@ -28,6 +28,13 @@
     </div>
   </div>
 </div>
+<footer style="background-color: #13083b" class="container-fluid pt-2 categoriesFooter ">
+  <div class="row">
+    <div class="py-4 col-lg-12">
+      <p class="text-center text-white">Copyright &copy; DIgitarea {{date("Y")}}</p>
+      <p class="text-center text-white">Conception GONA</p>
+    </div>
+  </footer>
 @endsection
 
 
