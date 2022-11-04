@@ -7,7 +7,7 @@
 <div class=" contact container ">
   <h2 style="color:#211061; font-weight:800;">Contactez-nous</h2>
   <div class="row">
-    <div style="height: 70%" class="col-lg-12 px-4 mt-3 pb-4  pt-4 rounded  bg-white shadow-lg " data-slider-nav-autoplay-interval="2000">
+    <div style="height: 70%" class="col-lg-8 px-4 mt-3 pb-4  pt-4 rounded  bg-white shadow-lg " data-slider-nav-autoplay-interval="2000">
         <div class="">
             <h5 style="color: #211061; font-weight:600" class="mb-4">Vous pouvez nous contacter via les canaux ci-dessous</h5>
 
@@ -23,7 +23,7 @@
 
         </div>
     </div>
-    <div class="logoContact col-lg-5">
+    <div class="logoContact col-lg-4">
         <img style="margin-top: -3.3em" src="{{asset('/img/contact-center.png')}}" width="350px" alt="">
     </div>
   </div>
