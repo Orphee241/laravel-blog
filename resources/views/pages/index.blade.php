@@ -19,13 +19,13 @@ Apprenez gratuitement des tutos en Développement web, Infographie, Marketing di
   </div>
 </div>   
 <div style="background-color: rgb(255, 255, 255)" class="container-fluid pt-2 home ">
-    <h2 class="pt-3" style="color:#211061; font-weight:800">Qui sommes-nous ?</h2>
+    <h2 class="pt-4" style="color:#211061; font-weight:800">Qui sommes-nous ?</h2>
     <div class="row">
       <div class="homeAbout col-lg-8 col-md-12 col-sm-12" style="font-size: 18px; ">
         <strong>Digitarea</strong> est une plateforme  qui offre une diversité d'astuces sur des thèmes relatifs au digital: infographie, montage vidéo, développement web, marketing digital, MAO... <br>
         Notre principale mission est de partager nos connaissances avec toutes personnes passionnée du domaine et désireuse d'apprendre de nouvelles choses.             
       </div>
-      <div style="padding-left: 9em; margin-top: -1em" class="interrogation justify-content-center col-lg-4">
+      <div style="padding-left: 9em; margin-top: -2em" class="interrogation justify-content-center col-lg-4">
         <img class="" width="200px" src="{{asset("/img/interrogation.png")}}" alt="">
       </div>
     </div>
@@ -62,8 +62,8 @@ Apprenez gratuitement des tutos en Développement web, Infographie, Marketing di
   </div>
   @endif
 </div>
-<div style="background-color: rgb(255, 255, 255)" class="container pt-2 home ">
-  <h2 class="pt-3" style="color:#211061; font-weight:800">Contactez-nous</h2>
+<div style="background-color: rgb(255, 255, 255)" class="container-fluid pt-2 home ">
+  <h2 class="pt-4" style="color:#211061; font-weight:800">Contactez-nous</h2>
   <div class="row">
     <div class="homeAbout col-lg-8 col-md-12 col-sm-12" style="font-size: 18px; ">
       Vous avez des interrogations ? vous souhaitez entrer en contact avec nous ? Joignez-nous via les canaux ci-dessous.
@@ -81,6 +81,21 @@ Apprenez gratuitement des tutos en Développement web, Infographie, Marketing di
     </div>
     <div style="padding-left: em; margin-top: -1em" class="interrogation justify-content-center col-lg-4">
       <img class="" width="400px" src="{{asset("/img/cntakt.png")}}" alt="">
+    </div>
+  </div>
+</div>
+<div style="background-color: rgb(255, 255, 255)" class="container-fluid home homeFormations">
+  <h2 class="pt-1" style="color:#211061; font-weight:800">Allez encore plus loin</h2>
+  <div class="row">
+    <div class=" col-lg-7 col-md-12 col-sm-12" style="font-size: 18px; ">
+      Vous souhaitez <strong style="color:#211061">approfondir vos connaissances ?</strong><br>
+      Vous êtes au bon endroit! <br>
+      <strong style="color:#211061">Digitarea</strong> met également à votre disposition des formations pour vous aider à résoudre des problèmes
+      plus ou moins complexes.<br>
+      <a class="voirAstuces mt-3 btn" style="text-decoration: none; font-weight:600" href="{{URL::to("formations")}}">Découvrir nos formations</a>
+    </div>
+    <div style="padding-left: 5em; margin-top: -6em" class="interrogation justify-content-center col-lg-5">
+      <img class="" width="" src="{{asset("/img/formation.png")}}" alt="">
     </div>
   </div>
 </div>

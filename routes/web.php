@@ -20,6 +20,9 @@ Route::get('/', [PagesController::class, "index"]);
 /* Page articles */
 Route::get('/articles', [PagesController::class, "articles"]);
 
+/* Page Formations */
+Route::get('/formations', [PagesController::class, "formations"])->name("formations");
+
 /* Page d'un article */
 Route::get('/article/{id}', [PagesController::class, "article"]);
 

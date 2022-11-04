@@ -33,8 +33,11 @@ nav ul li a{
 .home{
     padding: 0 3em;
     border-radius: 20px;
-    padding-bottom: 3em;
+    padding-bottom: 1em;
     margin-top : 5em !important;
+    padding-bottom: 4em;
+    margin-bottom: 4em;
+
 }
 .home2{
     padding: 0 3em;
@@ -67,12 +70,6 @@ nav ul li a{
 }
 .aboutFooter{
     margin-top: 14em;
-}
-
-/* Home */
-.home{
-    margin-top: 3em;
-    margin-bottom: 3em;
 }
 
 /* Section header home */
@@ -108,8 +105,9 @@ nav ul li a{
     
 }
 
-.homeFooter{
-
+.homeFormations{
+    padding-top: 3em;
+    margin-bottom: 4em;
 }
 
 

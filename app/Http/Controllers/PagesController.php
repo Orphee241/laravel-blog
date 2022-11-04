@@ -330,6 +330,13 @@ class PagesController extends Controller
                     ->paginate(30);
         return view("pages.articles")->with("articles", $articles);
     }
+
+    public function formations(){ 
+        
+        return view("pages.formations");
+    }
+
+
       
 
     public function categories(){

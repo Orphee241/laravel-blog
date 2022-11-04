@@ -19,6 +19,9 @@
             <a class="nav-link " href="{{URL::to("/articles")}}">Tutos</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link " href="{{URL::to("/formations")}}">Formations</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link " href="{{URL::to("/categories")}}">Catégories</a>
           </li>
           @if(session("uzer"))
