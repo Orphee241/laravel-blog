@@ -62,7 +62,7 @@ Apprenez gratuitement des tutos en Développement web, Infographie, Marketing di
   </div>
   @endif
 </div>
-<div style="background-color: rgb(255, 255, 255)" class="container-fluid pt-2 home ">
+<div style="background-color: rgb(255, 255, 255)" class="container pt-2 home ">
   <h2 class="pt-3" style="color:#211061; font-weight:800">Contactez-nous</h2>
   <div class="row">
     <div class="homeAbout col-lg-8 col-md-12 col-sm-12" style="font-size: 18px; ">
@@ -72,10 +72,10 @@ Apprenez gratuitement des tutos en Développement web, Infographie, Marketing di
                 <a style="text-decoration: none; color: #211061" href="httpss://wa.me/+24177187894"><i class="fa-brands fa-whatsapp mb-4" style="font-size: 20px; color: #211061"></i><span style="font-size: 20px; color: #211061"></i> Whatsapp</a>
             </div>
             <div class="col-lg-12 justify-content-center">
-                <i class="fa-solid fa-envelope mb-4" style="font-size: 20px; color: #211061"></i><span style="font-size: 20px; color: #211061;"> <a style="font-size: 20px; color: #211061; text-decoration:none" href="mailto:digitarea@gmail.com">digitarea@gmail.com</a></span>
+                <i class="fa-solid fa-envelope mb-4" style="font-size: 20px; color: #211061"></i><span style="font-size: 20px; color: #211061;"> <a style="font-size: 20px; color: #211061; text-decoration:none" href="mailto:digitarea@gmail.com">Email</a></span>
             </div>
             <div class="col-lg-12 justify-content-center">
-                <i class="fa-solid fa-phone mb-4" style="font-size: 20px; color: #211061"></i><span style="font-size: 20px; color: #211061"></i><span style="font-size: 20px; color: #211061"></i> <span style="font-size: 20px; color: #211061"><a style="text-decoration: none; color:#211061" href="tel:+24177187894">+241 77 18 78 94</a> / <a style="text-decoration: none; color:#211061" href="te:+24162102805">+241 62 10 28 05</a></span>
+                <i class="fa-solid fa-phone mb-4" style="font-size: 20px; color: #211061"></i><span style="font-size: 20px; color: #211061"></i><span style="font-size: 20px; color: #211061"></i> <span style="font-size: 20px; color: #211061"><a style="text-decoration: none; color:#211061" href="tel:+24177187894">Téléphone</a></span>
             </div>
     </div>
     </div>

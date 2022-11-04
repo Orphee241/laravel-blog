@@ -19,7 +19,6 @@
                   </button>
                 </div>
               </div>
-
   @if(Session::has("success"))
     <div class="alert alert-success mt-2 col-lg-6">
       {{Session::get("success")}}
