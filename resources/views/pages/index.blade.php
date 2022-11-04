@@ -62,6 +62,67 @@ Apprenez gratuitement des tutos en Développement web, Infographie, Marketing di
   </div>
   @endif
 </div>
+<div style="background-color: rgb(255, 255, 255)" class="container-fluid home homeFormations">
+  <h2 class="" style="color:#211061; font-weight:800">Allez encore plus loin</h2>
+  <div class="row">
+    <div class=" col-lg-7 col-md-12 col-sm-12" style="font-size: 18px; ">
+      Vous souhaitez <strong style="color:#211061">approfondir vos connaissances ?</strong><br>
+      Vous êtes au bon endroit! <br>
+      <strong style="color:#211061">Digitarea</strong> met également à votre disposition des formations pour vous aider à résoudre des problèmes
+      plus ou moins complexes.<br>
+      <a class="voirAstuces mt-3 btn" style="text-decoration: none; font-weight:600" href="{{URL::to("formations")}}">Découvrir nos formations</a>
+    </div>
+    <div style="padding-left: 5em; margin-top: -6em" class="interrogation justify-content-center col-lg-5">
+      <img class="" width="" src="{{asset("/img/formation.png")}}" alt="">
+    </div>
+  </div>
+</div>
+<div style="background-color: rgb(255, 255, 255)" class="container-fluid home homeFormations">
+  <h2 class="" style="color:#211061; font-weight:800">Devenez <span style="color:#ffc011">VIP</span><i style="color: #ffc011; transform: translateY(2px)" class="mr-2 zmdi zmdi-"></i><i style="color:#ffc011" class="fa-sharp fa-solid fa-crown"></i></h2>
+  <div class="row">
+    <div class=" col-lg-7 col-md-12 col-sm-12" style="font-size: 18px; ">
+      En devenant <span style="color:#ffc011"><strong>VIP</strong></span> vous obtenez plusieurs privilèges :  <br><br>
+      <p><i style="color:#ffc011" class="fa-sharp fa-solid fa-crown"></i>
+        Assistance technique.
+      </p>
+      <p><i style="color:#ffc011" class="fa-sharp fa-solid fa-crown"></i>
+        Accès aux tutos et aux formations payantes.
+      </p>
+      <p><i style="color:#ffc011" class="fa-sharp fa-solid fa-crown"></i>
+        Téléchargement des vidéos avec les ressouces.
+      </p>
+      <p><i style="color:#ffc011" class="fa-sharp fa-solid fa-crown"></i>
+       30% de réduction sur nos tutos et formations payantes.
+    </p>
+      <a class="voirAstuces mt-3 btn" style="text-decoration: none; font-weight:600" href="{{URL::to("formations")}}">Découvrir nos formations</a>
+    </div>
+    <div style="padding-left: 8em; margin-top: -2em;" class="interrogation justify-content-center col-lg-5">
+      <i style="font-size: 17em; color: #211061" class="fa-sharp fa-solid fa-crown"></i>
+    </div>
+  </div>
+</div>
+<div style="background-color: rgb(255, 255, 255)" class="container-fluid home homeFormations">
+  <h2 class="col-lg-6 " style="color:#211061; font-weight:800; padding-left: 0">Vous souhaitez proposer vos propres 
+    <span style="color:#ffc011">tutos</span> ou <span style="color:#ffc011">formations</span> ?
+  </h2>
+  <div class="row">
+    <div class="mt-3 col-lg-7 col-md-12 col-sm-12" style="font-size: 18px; ">
+      <p>
+        Nous vous donnons la possibilité de proposer votre savoir-faire sur notre plateforme.
+      </p>
+      <p>
+        Nous vous laissons le soin de choisir les prix de vos tutos ou formations selon un intervalle de prix donné.
+      </p>
+      <p>
+        Nous mettons à votre disposition espace dédié pour communiquer avec vos apprenants.
+      </p>
+      <a class="voirAstuces mt-3 btn" style="text-decoration: none; font-weight:600" href="{{URL::to("formations")}}">Découvrir nos formations</a>
+    </div>
+    <div style="padding-left: 5em; margin-top: -6em" class="interrogation justify-content-center col-lg-5">
+      <img class="" width="" src="{{asset("/img/formation.png")}}" alt="">
+    </div>
+  </div>
+</div>
 <div style="background-color: rgb(255, 255, 255)" class="container-fluid pt-2 home ">
   <h2 class="pt-4" style="color:#211061; font-weight:800">Contactez-nous</h2>
   <div class="row">
@@ -81,21 +142,6 @@ Apprenez gratuitement des tutos en Développement web, Infographie, Marketing di
     </div>
     <div style="padding-left: em; margin-top: -1em" class="interrogation justify-content-center col-lg-4">
       <img class="" width="400px" src="{{asset("/img/cntakt.png")}}" alt="">
-    </div>
-  </div>
-</div>
-<div style="background-color: rgb(255, 255, 255)" class="container-fluid home homeFormations">
-  <h2 class="pt-1" style="color:#211061; font-weight:800">Allez encore plus loin</h2>
-  <div class="row">
-    <div class=" col-lg-7 col-md-12 col-sm-12" style="font-size: 18px; ">
-      Vous souhaitez <strong style="color:#211061">approfondir vos connaissances ?</strong><br>
-      Vous êtes au bon endroit! <br>
-      <strong style="color:#211061">Digitarea</strong> met également à votre disposition des formations pour vous aider à résoudre des problèmes
-      plus ou moins complexes.<br>
-      <a class="voirAstuces mt-3 btn" style="text-decoration: none; font-weight:600" href="{{URL::to("formations")}}">Découvrir nos formations</a>
-    </div>
-    <div style="padding-left: 5em; margin-top: -6em" class="interrogation justify-content-center col-lg-5">
-      <img class="" width="" src="{{asset("/img/formation.png")}}" alt="">
     </div>
   </div>
 </div>
