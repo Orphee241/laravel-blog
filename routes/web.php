@@ -92,6 +92,6 @@ Route::get("/admin/category/{nom_categorie}", [adminController::class, "category
 Route::get("/admin/add-article", [adminController::class, "add_article"]);
 Route::post("/admin/create-article", [adminController::class, "create_article"]);
 Route::get("/admin/edit-article/{id}", [adminController::class, "edit_article"]);
-Route::post("/admin/editt-article", [adminController::class, "editt_article"]);
+Route::post("/admin/editt-article/{id}", [adminController::class, "editt_article"]);
 Route::get("/admin/delete-article/{id}", [adminController::class, "delete_article"]);
 Route::get("/admin/confirm-delete-article/{id}", [adminController::class, "confirm_delete_article"]);

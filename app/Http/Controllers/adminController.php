@@ -145,11 +145,11 @@ class AdminController extends Controller
         
     }
 
-    public function editt_article(Request $request){
+    public function editt_article(Request $request, $id){
         $article = Articles::find($request->id);
 
         $request->validate([
-            "image" => "required",
+            "image" => "required|max:2000",
             "titre" => "required",
             "description" => "required",
             "corps" => "min:12",
@@ -160,6 +160,7 @@ class AdminController extends Controller
         [
             "titre.required" =>"Le nom de l'article est obligatoire",
             "image.required" =>"Veuillez uploder une image",
+            "image.max" =>"La taille de l'image ne doit pas dépasser 2Mo",
             "description.required" =>"Veuillez ajouter une description",
             "corps.min" =>"L'article doit contenir minimum 12 caractères",
             "categorie.required" =>"Veuillez ajouter une catégorie",
@@ -168,8 +169,8 @@ class AdminController extends Controller
         ]
         );
 
-        $name = $request->file("image")->getClientOriginalName();
-        $request->file("image")->move(public_path("img"), $name);
+        $image = $request->file("image")->getClientOriginalName();
+        $request->file("image")->move(public_path("img"), $image);
         $titre = $request->titre;
         $description = $request->description;
         $corps = $request->corps;
@@ -178,7 +179,7 @@ class AdminController extends Controller
         $date_publication = $request->publication;
         
         if(isset($image, $titre, $description, $nom_categorie, $corps, $auteur, $date_publication)){
-        $article->image = htmlentities($name);
+        $article->image = htmlentities($image);
         $article->titre = htmlentities($titre);
         $article->description = htmlentities($description);
         $article->corps = htmlentities($corps);
@@ -187,13 +188,13 @@ class AdminController extends Controller
         $article->date_publication = htmlentities($date_publication);
         $article->update();
       
-        return redirect("/admin/articles")->with("status", "Article modifié avec succes!");
+        return redirect("/admin/articles")->with("success", "Article modifié avec succes!");
         
         }
         else
         {
 
-            return redirect("/admin/edit-article")->with("error", "Veuillez remplir tous les champs !");
+            return redirect("/admin/edit-article/$id")->with("error", "Veuillez remplir tous les champs !");
 
         }
 

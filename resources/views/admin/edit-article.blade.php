@@ -9,7 +9,10 @@
         <div class="section__content">
             <div class="container-fluid ">
     <h3 class="ml-3 mb-3">Editer un article</h3>
-  <form  action="{{URL::to('/admin/editt-article')}}" method="post" enctype="multipart/form-data" >
+    @if (Session::has("error"))
+        <div class="col-lg-8 alert alert-danger">{{Session::get("error")}}</div>
+    @endif
+  <form  action="{{URL::to('/admin/editt-article')}}/{{$article->id}}" method="post" enctype="multipart/form-data" >
     @csrf
     <input type="hidden" name="id" value="{{$article->id}}">
     <div class="col-lg-8">
