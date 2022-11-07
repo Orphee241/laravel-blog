@@ -59,11 +59,11 @@ class AdminController extends Controller
             $categorie->nom = htmlentities($nom_categorie);
             $categorie->save();
             
-            return redirect("/admin/categories")->with("success", "Votre article a été crée avec succès");
+            return redirect("/admin/categories")->with("success", "Votre catégorie a été crée avec succès");
         }
         else
         {
-            return redirect("/admin/add-category")->with("error", "Veuillez entrer le nom de la catégorie !");
+            return redirect("/admin/add-category")->with("error", "Veuillez entrer correctement le nom de la catégorie !");
         }
     }
 

@@ -18,7 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PagesController::class, "index"]);
 
 /* Page articles */
-Route::get('/articles', [PagesController::class, "articles"]);
+Route::get('/blog', [PagesController::class, "articles"]);
+
+/* Page articles */
+Route::get('/tutoriels', [PagesController::class, "tutos"]);
 
 /* Page Formations */
 Route::get('/formations', [PagesController::class, "formations"])->name("formations");

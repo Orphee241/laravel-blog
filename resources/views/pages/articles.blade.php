@@ -1,20 +1,30 @@
 @extends('layout.app')
 @section('title')
-    Tous les tutoriels | Digitarea 
+    Tous les articles | Digitarea 
 @endsection
 @section('content')
 <div class="container articles">
-  <div style="transform: translateY(1.5em)" class="row">
-    <div class="col-lg-7"></div>
+  <div style="transform: translateY(1.5em)" class="row form-group">
+    <div class="trier col-lg-7">
+      <div onclick="btn()" style=" border-radius: 4px" class="trierBtn py-2 text-center bg-white col-lg-6">
+        Trier par catégories
+      </div>
+      <div style=" border-radius: 4px" class="btnContent bg-white col-lg-6">
+        @foreach ($categories as $categorie)
+          <a class="btn" style="text-decoration: none; color: #211061; font-weight:500" href="/category/{{$categorie->nom}}">{!!html_entity_decode($categorie->nom)!!}</a><br/>
+        @endforeach 
+      </div>
+      
+    </div>
     <div class="col-lg-5">
       <input placeholder="Rechercher un article" style="border: 1px solid #211061; border-radius:4px; width: 18em; padding: 0.4em 12px" type="search" name="search" id="search">
       <button style="padding: 7px 8px; background-color: #211061; color:white" class="search btn" type="submit">Rechercher</button>
     </div>
   </div>
 </div>
-<div style="background-color: rgb(255, 255, 255)" class=" container pb-3 mt-5">
+<div style="background-color: rgb(255, 255, 255)" class="articles container pb-3 mt-5">
   @if($articles->count() > 0)
-    <h2 class="pt-3" style="color: #211061; font-weight: 800">Tous les tutoriels ({{$articles->count()}})</h2>
+    <h2 class="pt-3" style="color: #211061; font-weight: 800">Tous les articles ({{$articles->count()}})</h2>
     <div class="row">
       @foreach ($articles as $article)
       <div class="mt-3 col-lg-4 col-md-6 col-sm-12 ">
@@ -54,5 +64,28 @@
     let search = $("#search").val();
     alert(search)
   })
+</script>
+{{-- Toggle trier --}}
+<script>
+  function btn(){
+    let content = document.querySelector(".btnContent");
+
+   
+
+    
+    if(content.classList.contains("btnContentToggle")){
+      content.classList.remove("btnContentToggle")
+      setTimeout(() => {
+        content.style.display = "none"
+      }, 100);
+    }
+    else{
+      content.style.display = "block"
+      setTimeout(() => {
+      content.classList.add("btnContentToggle")
+      }, 100);
+    } 
+
+  }
 </script>
 @endsection

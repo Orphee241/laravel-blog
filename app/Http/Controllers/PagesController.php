@@ -104,14 +104,19 @@ class PagesController extends Controller
 
                 $uzer = Uzers::where('email', $email)->first();
 
-                if($uzer->email == $email && password_verify($password, $uzer->mot_de_passe)){
-                    $request->session()->put("uzer", $uzer->pseudo);
-                    return redirect("/");
+                if(isset($uzer->email)){
+                    if($uzer->email == $email && password_verify($password, $uzer->mot_de_passe)){
+                        $request->session()->put("uzer", $uzer->pseudo);
+                        return redirect("/")->with("success", "Vous êtes connecté");
+                    }
+                    else
+                    {
+                        return back()->with("error", "Email ou mot de passe incorrect");
+                    }
+                }else
+                {
+                    return back()->with("error", "Cet utilisateur n'existe pas dans la base de donnée");
                 }
-                else{
-                    return back()->with("error", "Email ou mot de passe incorrect");
-                }
-
             }
             else{
                 return back()->with("error", "Veuillez entrer une adresse email valide");
@@ -143,7 +148,6 @@ class PagesController extends Controller
 
         return view("pages.add-comment2")->with("article", $article)->with("comment", $comment);
     }
-
 
     public function create_comment(Request $request, $id){
 
@@ -193,11 +197,11 @@ class PagesController extends Controller
     public function create_comment2(Request $request, $article_id, $comment_id){
 
         $request->validate([
-            "comment" => "min:12",
+            "comment" => "required",
             "auteur" => "min:3"
         ],
         [
-            "comment.min" =>"Votre commentaire doit contenir minimum 12 caractères",
+            "comment.required" =>"Veuillez entrer votre commentaire",
             "auteur.min" => "Le nom de l'auteur doit contenir au minimum 3 caractères"
         ]
 
@@ -220,7 +224,7 @@ class PagesController extends Controller
                 $commentaire->article_id = $articleId;
                 $commentaire->save();
 
-                return redirect("/article/$article_id")->with("success", "Votre commentaire a été posté");
+                return redirect("/article/$article_id")->with("success", "Votre réponse a été postée");
 
             }
             else{
@@ -328,9 +332,17 @@ class PagesController extends Controller
     public function articles(){ 
         $articles = Articles::orderBy("titre", "desc")
                     ->paginate(30);
-        return view("pages.articles")->with("articles", $articles);
+        $categories = Categories::orderBy("nom", "asc")->get();
+        return view("pages.articles")->with("articles", $articles)->with("categories", $categories);
     }
 
+    /* Tutoriels */
+    public function tutos(){ 
+        
+        return view("pages.tutos");
+    }
+
+    /* Formations */
     public function formations(){ 
         
         return view("pages.formations");

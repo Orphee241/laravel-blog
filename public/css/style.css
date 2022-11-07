@@ -20,6 +20,7 @@ body{
 /* Header */
 .header{
     margin-top: 4em;
+    margin-bottom: 8em;
 }
 
 /* Nav */
@@ -28,6 +29,10 @@ nav ul li a{
     color: white !important;
     font-weight: 400 !important;
     
+}
+/* Btn signup login */
+.loginSignupBtn{
+
 }
 /* Home */
 .home{
@@ -45,8 +50,37 @@ nav ul li a{
     margin-bottom: 3em !important;
 
 }
+
+/* Formations */
+.formations{
+    padding: 3em 3em;
+    margin-top: 2em;
+    margin-bottom: 4em;
+    border-radius: 15px;
+}
+.formationsTitre{
+    margin-top: 6em;
+    padding: 0 3em;
+    
+}
 .articles{
     border-radius: 20px;
+}
+/* Bouton trier articles */
+.trierBtn{
+    cursor: pointer;
+}
+.btnContent{
+    margin-top: 3em;
+    transition: all 0.4s;
+    display: none;
+    opacity: 0;
+}
+/* toggle class */
+.btnContentToggle{
+    margin-top: 0.5em;
+    
+    opacity: 1;
 }
 .signupFooter{
    margin-top: 15em; 
@@ -120,8 +154,15 @@ nav ul li a{
 .articles{
     margin-top: 5em;
 }
+
 .articlesFooter{
     margin-top: 4em;
+}
+
+.article{
+    margin-top: 7em;
+    width: 1080px;
+    margin-bottom: 3em;
 }
 
 /* Signup */
@@ -177,6 +218,10 @@ nav ul li a{
 @media screen and (max-width: 1120px) {
     .headerLogo{
         display: none;
+        
+    }
+    .article{
+        width: 100%;
     }
 
 }
@@ -204,7 +249,7 @@ nav ul li a{
     .home2{
         padding: 0 1em;
         border-radius: 20px;
-        margin-bottom: 3em !important;
+        margin-bottom: 4em !important;
         margin-top : -1em !important;
 
     }
@@ -216,9 +261,26 @@ nav ul li a{
         margin-top: 0.5em;
     }
     .homeFormations{
-        padding-top: 2em !important;
-        margin-bottom: 4em;
+    padding-top: 3em;
+    margin-bottom: 4em;
+    margin-top: 4em;
+    
     }
+    .trier{
+        margin-bottom: 0.8em;
+        width: 98%;
+    }
+    .article{
+        
+    }
+    .reply{
+        width: 100%;
+    }
+    /* profil commentaire */
+    .nomAuteur{
+        margin-top: 8px;
+    }
+
 
 }
 

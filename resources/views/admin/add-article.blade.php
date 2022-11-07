@@ -41,8 +41,7 @@
                 <div class="form-group">
                     <select name="categorie" id="" class="form-control  @error('categorie') is-invalid @enderror">
                         <option value="" selected disabled>Catégorie</option>
-                        <option value="Frontend">Frontend</option>
-                        <option value="Backend">Backend</option>
+                        <option value="devweb">Développement web</option>
                         <option value="Infographie">Infographie</option>
                         <option value="Growth-Hacking">Growth-Hacking</option>
                         <option value="MAO">MAO</option>

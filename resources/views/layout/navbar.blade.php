@@ -16,37 +16,40 @@
             <a class="nav-link  active" aria-current="page" href="{{URL::to("/")}}">Accueil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="{{URL::to("/articles")}}">Tutos</a>
+            <a class="nav-link " href="{{URL::to("/blog")}}">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{URL::to("/tutoriels")}}">Tutos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link " href="{{URL::to("/formations")}}">Formations</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link " href="{{URL::to("/formations")}}">Devenir VIP</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link " href="{{URL::to("/categories")}}">Catégories</a>
           </li>
-          @if(session("uzer"))
-            <li class="nav-item">
-              <a class="nav-link " href="{{URL::to("/logout")}}">Déconnexion</a>
-            </li>   
-          @else
-            <li class="nav-item">
-              <a class="nav-link " href="{{URL::to("/login")}}">Se connecter</a>
-            </li>
-          @endif  
           <li class="nav-item">
-            <a class="nav-link " href="{{URL::to("/signup")}}">S'inscrire</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="{{URL::to("/about")}}">A propos</a>
+            <a class="nav-link " href="{{URL::to("/about")}}">A&nbsp;propos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link " href="{{URL::to("/contact")}}">Contact</a>
           </li>
         </ul>
-        <ul style="margin-left: 25%" class="navbar-nav">
-          <li style="" class="nav-item">
-            <a class="nav-link text-white" href=""></a>
+        <ul style="" class="loginSignupBtn navbar-nav">  
+          <li class="nav-item">
+            <a class="nav-link " href="{{URL::to("/signup")}}">S'inscrire</a>
           </li>
+          @if(session("uzer"))
+          <li class="nav-item">
+            <a class="nav-link " href="{{URL::to("/logout")}}">Déconnexion</a>
+          </li>   
+          @else
+          <li class="nav-item">
+            <a class="nav-link " href="{{URL::to("/login")}}">Se&nbsp;connecter</a>
+          </li>
+          @endif
         </ul>
       </div>
     </div>
