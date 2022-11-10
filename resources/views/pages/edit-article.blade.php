@@ -5,7 +5,7 @@
 @section('content')
   
 <div class="add-article container mt-4">
-    <h2>ADMINISTRATION</h2>
+    <h2>Editer un article</h2>
     <H5>Ajouter un article</H5>
   <form class="row" action="{{URL::to('/editt-article')}}" method="post" enctype="multipart/form-data" >
     @csrf

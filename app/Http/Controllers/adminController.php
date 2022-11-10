@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Categories;
 use App\Models\Articles;
 use Illuminate\Http\Request;
+use App\Models\Tutos;
 
 class AdminController extends Controller
 {
@@ -81,6 +82,7 @@ class AdminController extends Controller
         return view("admin.add-article");
     } 
 
+
     public function create_article(Request $request){
 
         $request->validate([
@@ -134,6 +136,87 @@ class AdminController extends Controller
         {
 
             return redirect("/admin/add-article")->with("error", "Veuillez remplir tous les champs !");
+
+        }
+
+    }
+
+    /* ----------------------Tuto------------------------ */
+
+    public function tutos(){ 
+        $categories = Categories::orderBy("nom", "asc")->get();
+        $tutos = Tutos::orderBy("titre", "asc")->get();
+        return view("admin.tutos")->with("categories", $categories)->with("tutos", $tutos);
+    }
+
+    public function tuto($id){
+        $tuto = Tutos::find($id);
+        $tutos = Tutos::orderBy("id", "desc")->get();
+        return view("admin.article")->with("tuto", $tuto)->with("tutos", $tutos);
+    }
+
+
+    public function add_tuto(){
+        return view("admin.add-tuto");
+    }
+
+    public function create_tuto(Request $request){
+
+        $request->validate([
+            "titre" => "min:6",
+            "description" => "required|min:6",
+            "video" => "required|file|max:10000|mimetypes:video/mp4",
+            "categorie" => "required",
+            "auteur" => "required",
+            "publication" => "required",
+            "temps" => "required",
+            "prix" => "min:4",
+        ],
+        [
+            "titre.required" =>"Le nom de l'article doit contenir au moins 6 caractères",
+            "video.max" =>"La taille de la vidéo ne doit pas dépasser 10 Mo",
+            "video.mimetypes" =>"Vous devez ajouter une vidéo au format mp4",
+            "description.min" =>"Votre description doit contenir au minimum 6 cractères",
+            "categorie.required" =>"Veuillez ajouter une catégorie",
+            "auteur.min" =>"Le nom de l'auteur doit contenir au moins 3 caractères",
+            "prix.min" =>"Le prix doit 1000",
+            "temps.required" =>"Veuillez entrer la durée de la vidéo",
+            "publication.required" =>"Veuillez ajouter une date de publication"
+        ]
+
+        );
+
+            $video = $request->file("video")->getClientOriginalName();
+            $request->file("video")->move(public_path("video"), $video);
+            $titre = $request->titre;
+            $description = $request->description;
+            $prix = $request->prix;
+            $nom_categorie = $request->categorie;
+            $auteur = $request->auteur;
+            $temps = $request->temps;
+            $date_publication = $request->publication;
+
+        if(isset($video, $titre, $description, $nom_categorie, $prix, $temps, $auteur, $date_publication)){
+            
+            $tuto = new Tutos;
+
+            $tuto->video = htmlentities($video);
+            $tuto->titre = htmlentities($titre);
+            $tuto->description = htmlentities($description);
+            $tuto->prix = htmlentities($prix);
+            $tuto->temps = htmlentities($temps);
+            $tuto->categorie = htmlentities($nom_categorie);
+            $tuto->auteur = htmlentities($auteur);
+            $tuto->date_publication = htmlentities($date_publication);
+
+            $tuto->save();
+            
+            return redirect("/admin/tutos")->with("success", "Votre tuto a été crée avec succès");
+        }
+        else
+        {
+
+            return redirect("/admin/add-tuto")->with("error", "Veuillez remplir tous les champs !");
 
         }
 

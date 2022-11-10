@@ -69,13 +69,19 @@ Route::get('/add-comment/{id}', [PagesController::class, "add_comment"]);
 /* Page commentaires 2 */
 Route::get('/add-comment2/{article_id}/{comment_id}', [PagesController::class, "add_comment2"]);
 
-/* Page commentaires */
+/* Page creer commentaires */
 Route::post('/create-comment/{id}', [PagesController::class, "create_comment"]);
 
-/* Page commentaires 2 */
+/* Page creer commentaires 2 */
 Route::post('/create-comment2/{article_id}/{comment_id}', [PagesController::class, "create_comment2"]);
 
-/* Delete comment */
+/* Page modifier commentaires */
+Route::get('/edit-comment/{article_id}/{comment_id}', [PagesController::class, "edit_comment"]);
+
+/* Page modifier commentaires 2 */
+Route::post('/edit-comment2/{article_id}/{comment_id}', [PagesController::class, "edit_comment2"]);
+
+/* Page supprimer commentaire */
 Route::get('/delete-comment/{article_id}/{comment_id}', [PagesController::class, "delete_comment"]);
 
 /* Page à propos */
@@ -87,17 +93,43 @@ Route::get('/contact', [PagesController::class, "contact"]);
 /* ADMIN */
 
 Route::get("/admin/dashboard", [adminController::class, "dashboard"]);
+
 Route::get("/admin/users", [adminController::class, "users"]);
+
 Route::get("/admin/articles", [adminController::class, "articles"]);
+
 Route::get("/admin/article/{id}", [adminController::class, "article"]);
+
 Route::get("/admin/categories", [adminController::class, "categories"]);
+
 Route::get("/admin/add-category", [adminController::class, "add_category"]);
+
 Route::post("/admin/create-category", [adminController::class, "create_category"]);
+
 Route::get("/admin/stats", [adminController::class, "stats"]);
+
 Route::get("/admin/category/{nom_categorie}", [adminController::class, "category"]);
+
 Route::get("/admin/add-article", [adminController::class, "add_article"]);
+
 Route::post("/admin/create-article", [adminController::class, "create_article"]);
+
+Route::get("/admin/tutos", [adminController::class, "tutos"]);
+
+Route::get("/admin/tuto", [adminController::class, "tuto"]);
+
+Route::get("/admin/add-tuto", [adminController::class, "add_tuto"]);
+
+Route::post("/admin/create-tuto", [adminController::class, "create_tuto"]);
+
+Route::get("/admin/add-category", [adminController::class, "add_category"]);
+
+Route::post("/admin/create-category", [adminController::class, "create_category"]);
+
 Route::get("/admin/edit-article/{id}", [adminController::class, "edit_article"]);
+
 Route::post("/admin/editt-article/{id}", [adminController::class, "editt_article"]);
+
 Route::get("/admin/delete-article/{id}", [adminController::class, "delete_article"]);
+
 Route::get("/admin/confirm-delete-article/{id}", [adminController::class, "confirm_delete_article"]);

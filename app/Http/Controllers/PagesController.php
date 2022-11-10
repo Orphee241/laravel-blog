@@ -7,6 +7,7 @@ use App\Models\Articles;
 use App\Models\Categories;
 use App\Models\Comments;
 use App\Models\Replies;
+use App\Models\Tutos;
 
 
 
@@ -241,14 +242,54 @@ class PagesController extends Controller
 
     }
 
-    /* Edit edit */
-    public function edit_article(Request $request, $id){
+    public function edit_comment(Request $request, $id){
+        $article = Articles::find($id);
+        $comment = Comments::find($id);
+        
+        return view("pages.edit-comment")->with("article", $article)->with("comment", $comment);
+    }
+
+    public function edit_comment2(Request $request, $article_id, $comment_id){
+        $comment = Comments::find($comment_id);
+
+        $request->validate([
+            "comment" => "required|min:3",
+        ],
+        [
+            "comment.required" =>"Le nom de l'article est obligatoire",
+            "comment.min" =>"Vous devez entrer au minimum 3 caractères",
+        ]
+        );
+
+        $commentUpdate = $request->comment;
+        
+        if(isset($commentUpdate)){
+
+        $comment->corps = htmlentities($commentUpdate);
+
+        $comment->update();
+      
+        return redirect("/article/$article_id")->with("success", "Commentaire modifié avec succes!");
+        
+        }
+        else
+        {
+
+            return redirect("/edit-comment/$article_id/$comment_id")->with("error", "Veuillez remplir tous les champs !");
+
+        }
+
+    }
+
+
+    /* Edit   */
+ /*    public function edit_article(Request $request, $id){
         $article = Articles::find($id);
         return view("admin.edit-article")->with("article", $article);
         
-    }
+    } */
 
-    public function editt_article(Request $request){
+    /* public function editt_article(Request $request){
         $article = Articles::find($request->id);
 
         $request->validate([
@@ -300,23 +341,19 @@ class PagesController extends Controller
 
         }
 
-    }
+    } */
 
     /* Delete comment */
 
-    public function delete_comment($comment_id, $article_id){
-        $article = Articles::where("comment_id", $comment_id)
+    public function delete_comment($article_id, $comment_id){
+        $comment = Comments::where("id", $article_id)
                             ->where("article_id",$article_id);
+        $comment->delete();
 
-        return view("/admin/delete-article")->with("article", $article);
+        return redirect("/article/$article_id")->with("success", "commentaire supprimé avec succès");
     }
 
-    public function confirm_delete_article($id){
-        $article = Articles::find($id);
-        $article->delete();
-
-        return redirect("/admin/articles")->with("success", "Article supprimé avec succès");
-    }
+    
 
 
     public function article($id){
@@ -338,8 +375,9 @@ class PagesController extends Controller
 
     /* Tutoriels */
     public function tutos(){ 
-        
-        return view("pages.tutos");
+        $categories = Categories::orderBy("nom", "asc")->get();
+        $tutos = Tutos::orderBy("titre", "asc")->get();
+        return view("pages.tutos")->with("categories", $categories)->with("tutos", $tutos);
     }
 
     /* Formations */
@@ -348,8 +386,6 @@ class PagesController extends Controller
         return view("pages.formations");
     }
 
-
-      
 
     public function categories(){
         $categories = Categories::orderBy("nom", "asc")->get();

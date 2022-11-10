@@ -9,6 +9,9 @@
 
     <title>@yield('titre')</title>
 
+    {{-- Font Awesome --}}
+    <script src="https://kit.fontawesome.com/0bfd42b2db.js" crossorigin="anonymous"></script>
+
     <!-- Fontfaces CSS-->
     <link href="{{URL::to('admin/css/font-face.css')}}" rel="stylesheet" media="all">
     <link href="{{URL::to('admin/vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
@@ -41,6 +44,10 @@
 
     <!-- Bootstrap CSS-->
     <link href="admin/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    
+	<!-- Font Awesome Icon -->
+	<link type="text/css" rel="stylesheet" href="{{URL::to('error404/css/font-awesome.min.css')}}" />
 
     <!-- Vendor CSS-->
     <link href="admin/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
@@ -132,97 +139,35 @@
             <nav class="navbar-mobile">
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
-                        <li class="has-sub">
+                        <li class="active has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Administration</a>
-                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <i class="fas fa-tachometer-alt"></i>Tableau de bord</a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="index.html">Dashboard 1</a>
-                                </li>
-                                <li>
-                                    <a href="index2.html">Dashboard 2</a>
-                                </li>
-                                <li>
-                                    <a href="index3.html">Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="index4.html">Dashboard 4</a>
+                                    <a href="{{URL::to('/admin/dashboard')}}">
+                                        <i class="zmdi zmdi-home"></i>Accueil</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="chart.html">
-                                <i class="fas fa-chart-bar"></i>Statistiques</a>
+                        <li>
+                            <a href="{{URL::to('/admin/users')}}">
+                                <i class="zmdi zmdi-account-o"></i></i>Utilisateurs</a>
                         </li>
                         <li>
-                            <a href="table.html">
-                                <i class="fas fa-table"></i>Tables</a>
+                            <a href="{{URL::to('/admin/articles')}}">
+                                <i style="transform:translateY(-3.2px); display:inline-block" class="bi bi-card-text"></i></i>Articles</a>
                         </li>
                         <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Forms</a>
+                        <a href="{{URL::to('/admin/tutos')}}">
+                            <i class="fas fa-chart-bar"></i>Tutos</a>
                         </li>
                         <li>
-                            <a href="calendar.html">
-                                <i class="fas fa-calendar-alt"></i>Calendar</a>
+                            <a href="{{URL::to('/admin/categories')}}">
+                                <i style="transform:translateY(-3.2px); display:inline-block" class="bi bi-card-list"></i></i>Catégories</a>
                         </li>
-                        <li>
-                            <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Maps</a>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Pages</a>
-                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
-                                    <a href="login.html">Login</a>
-                                </li>
-                                <li>
-                                    <a href="register.html">Register</a>
-                                </li>
-                                <li>
-                                    <a href="forget-pass.html">Forget Password</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>UI Elements</a>
-                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
-                                    <a href="button.html">Button</a>
-                                </li>
-                                <li>
-                                    <a href="badge.html">Badges</a>
-                                </li>
-                                <li>
-                                    <a href="tab.html">Tabs</a>
-                                </li>
-                                <li>
-                                    <a href="card.html">Cards</a>
-                                </li>
-                                <li>
-                                    <a href="alert.html">Alerts</a>
-                                </li>
-                                <li>
-                                    <a href="progress-bar.html">Progress Bars</a>
-                                </li>
-                                <li>
-                                    <a href="modal.html">Modals</a>
-                                </li>
-                                <li>
-                                    <a href="switch.html">Switchs</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grids</a>
-                                </li>
-                                <li>
-                                    <a href="fontawesome.html">Fontawesome Icon</a>
-                                </li>
-                                <li>
-                                    <a href="typo.html">Typography</a>
-                                </li>
-                            </ul>
+                            <a href="{{URL::to('/admin/stats')}}">
+                            <i class="fas fa-chart-bar"></i>Statistiques</a>
                         </li>
                     </ul>
                 </div>
@@ -245,13 +190,10 @@
                                 <i class="fas fa-tachometer-alt"></i>Tableau de bord</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="{{URL::to('/admin/dashboard')}}">Accueil</a>
+                                    <a href="{{URL::to('/admin/dashboard')}}">
+                                        <i class="fa-solid fa-house"></i>Accueil</a>
                                 </li>
                             </ul>
-                        </li>
-                        <li>
-                            <a href="{{URL::to('/admin/stats')}}">
-                                <i class="fas fa-chart-bar"></i>Statistiques</a>
                         </li>
                         <li>
                             <a href="{{URL::to('/admin/users')}}">
@@ -262,10 +204,21 @@
                                 <i style="transform:translateY(-3.2px); display:inline-block" class="bi bi-card-text"></i></i>Articles</a>
                         </li>
                         <li>
+                            <a href="{{URL::to('/admin/tutos')}}">
+                                <i class="fa-solid fa-file-video"></i>Tutos</a>
+                        </li>
+                        <li>
+                            <a href="{{URL::to('/admin/formations')}}">
+                                <i class="fa-solid fa-file-video"></i>Formations</a>
+                        </li>
+                        <li>
                             <a href="{{URL::to('/admin/categories')}}">
                                 <i style="transform:translateY(-3.2px); display:inline-block" class="bi bi-card-list"></i></i>Catégories</a>
                         </li>
-    
+                        <li>
+                            <a href="{{URL::to('/admin/stats')}}">
+                                <i class="fas fa-chart-bar"></i>Statistiques</a>
+                        </li>
                     </ul>
                 </nav>
             </div>

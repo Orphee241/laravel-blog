@@ -12,20 +12,23 @@
   $heure = getdate(strtotime($article->created_at))["hours"] < 10 ? "0".getdate(strtotime($article->created_at))["hours"] : getdate(strtotime($article->created_at))["hours"];
   $annee = getdate(strtotime($article->created_at))["year"] < 10 ? "0".getdate(strtotime($article->created_at))["year"] : getdate(strtotime($article->created_at))["year"];
 ?>
-    
-<div  style="background-color: white; border-radius: 4px;" class="container article">
-    <h2 class="pt-4" style="color: #211061; font-weight:800">{!!html_entity_decode($article->titre)!!}</h2>
+
+<div class="container px-3">
+  <h2 class="" style="margin-top: 4em; color: #211061; font-weight:800">{!!html_entity_decode($article->titre)!!}</h2>
+</div>
+
+<div  style="background-color: white; border-radius: 16px;" class="pt-2 container article">  
     <p style="margin-top: 1em; color: rgb(9, 22, 38)" class="card-date"><i style="color:#211061;" class="fa-sharp fa-solid fa-calendar"></i> Publié le: {{$jour ."/". $mois ."/". $annee ." à ". $heure ."h". $minute}}</p>
     <p style="margin-top: -0.8em; color: rgb(9, 22, 38)" class="card-auteur"><i style="color:#211061;" class="fa-solid fa-user"></i> Par : <span style="color:rgb(9, 22, 38)"><strong>{{$article->auteur}}</strong></span></p>
     @if(Session::has("success"))
-      <div class="col-lg-9 alert alert-success">{{Session::get("success")}}</div>
+      <div class="col-lg-6 alert alert-success">{{Session::get("success")}}</div>
     @endif
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 ">
         <div style="min-height: 100%; border: none" class="card">
           <img src="{{asset('/img')}}/{{$article->image}}" class="card-img-top" alt="...">
             <div style="border: none" class="card-bo">
-              <p style="font-size: 18px; margin-top: -0.5em; color: rgb(9, 22, 38)" class=" card-text">{!!html_entity_decode($article->corps)!!}</p><br>
+              <p style="font-size: 18px; margin-top: 1em; color: rgb(9, 22, 38)" class=" card-text">{!!html_entity_decode($article->corps)!!}</p><br>
               @if(session()->has("uzer"))
               <a href="/add-comment/{{$article->id}}">
                 <button style="background-color: #211061" class="text-white btn"><i style="color: #ffffff; transform: translateY(2px)" class="mr-2 zmdi zmdi-comment"></i>Commenter</button>
@@ -62,11 +65,11 @@
           @if(session()->has("uzer"))
           <div class="col-lg-12">
             <a href="/add-comment2/{{$article->id}}/{{$comment->id}}">
-              <button style="border: 1px solid #211061; color: #211061, font-weight: bold" class="mt-2 btn"><i style="width: 2.5em; color: #211061; transform: translateY(2px)" class=" zmdi zmdi-comment"></i></button>
+              <button style="background-color: #211061; border: 1px solid #211061; color: white; font-weight: bold" class="mt-2 btn"><i style="width: 2.5em; color: #ffffff; transform: translateY(2px)" class=" zmdi zmdi-comment"></i></button>
             </a>
             @if(session()->get("uzer") == $comment->auteur)
-              <a href="/edit-comment/{{$article->id}}">
-                <button style="border: 1px solid #211061; color: #211061, font-weight: bold" class="mt-2 btn"><i style="width: 2.5em; color: #211061; transform: translateY(2px)" class=" zmdi zmdi-edit"></i></button>
+              <a href="/edit-comment/{{$article->id}}/{{$comment->id}}">
+                <button style="background-color: #211061; border: 1px solid #211061; color: #ffffff, font-weight: bold" class="mt-2 btn btn-primary"><i style="width: 2.5em; color: #ffffff; transform: translateY(2px)" class=" zmdi zmdi-edit"></i></button>
               </a>
               <a href="/delete-comment/{{$article->id}}/{{$comment->id}}">
                 <button style="color: #211061, font-weight: bold" class="mt-2 btn btn-danger"><i style="width: 2.5em; transform: translateY(2px)" class=" zmdi zmdi-delete"></i></button>
@@ -104,12 +107,12 @@
           <div class="col-lg-12 ">
             @if(session()->get("uzer") == $comment->auteur)
               <a href="/edit-comment/{{$article->id}}">
-                <button style="border: 1px solid #211061; color: #211061, font-weight: bold" class="mt-2 btn"><i style=" width: 3em; color: #211061; transform: translateY(2px)" class="zmdi zmdi-edit"></i></button>
+                <button style="background-color: #211061; border: 1px solid #211061; color: #ffffff, font-weight: bold" class="mt-2 btn btn-primary"><i style="width: 2.5em; color: #ffffff; transform: translateY(2px)" class=" zmdi zmdi-edit"></i></button>
               </a>
-              <a href="/delete-comment/{{$article->id}}">
-                <button style="color: #211061, font-weight: bold" class="mt-2 btn btn-danger"><i style=" width: 3em; transform: translateY(2px)" class="zmdi zmdi-delete"></i></button>
+              <a href="/delete-comment/{{$article->id}}/{{$comment->id}}">
+                <button style="color: #211061, font-weight: bold" class="mt-2 btn btn-danger"><i style="width: 2.5em; transform: translateY(2px)" class=" zmdi zmdi-delete"></i></button>
               </a> 
-            @endif  
+            @endif 
         </div> 
         @endif 
         </div>

@@ -8,15 +8,20 @@ Apprenez gratuitement des tutos  en Développement web, Infographie, Marketing d
 <div class="row header">
   <div class="colHeader col-lg-5 col-md-12 col-sm-12">
     <h1 style="font-weight:900; color: #211061" class="h1Home mt-5">Découvrez des articles, des tutoriels et des formations sur le digital Grâce à Digitarea</h1>
+    @if(Session::has("success"))
+      <div class="alert alert-success col-lg-12">
+        {{Session::get("success")}}
+      </div>
+    @endif
     <p style="font-size: 20px" class="">
       Apprenez en suivant gratuitement des tutos et des formations dans plusieurs domaines : <span style="font-weight: 700; color:#211061">Développement web</span>, <span style="font-weight: 700; color:#211061">Infographie</span>, 
        <span style="font-weight: 700; color:#211061">Marketing digital, </span> <span style="font-weight: 700; color:#211061">Musique...</span>
     </p>
-    <a class="voirAstuces mt-2 btn" style="text-decoration: none; font-weight:600" href="{{URL::to("/articles")}}">Découvrir nos tutos</a>
+    <a class="voirAstuces mt-2 btn" style="text-decoration: none; font-weight:600" href="{{URL::to("/blog")}}">Découvrir nos tutos</a>
     <a class="creerCompte mt-2 btn" style="text-decoration: none; font-weight:600" href="{{URL::to("/signup")}}">Je crée mon compte</a>
   </div>
   <div class="headerLogo justify-content-center col-lg-6 pt-5">
-    <img  class="headerLogo  pl-5" src="{{URL::to("/img/digitareaheader3.png")}}" alt="">
+    <img  class="headerLogo" src="{{URL::to("/img/digitareaheader3.png")}}" alt="">
   </div>
 </div>   
 <div style="background-color: rgb(255, 255, 255)" class="container-fluid home ">
@@ -82,7 +87,7 @@ Apprenez gratuitement des tutos  en Développement web, Infographie, Marketing d
       <a class="voirAstuces mt-3 btn" style="text-decoration: none; font-weight:600" href="{{URL::to("formations")}}">Découvrir nos formations</a>
     </div>
     <div style="padding-left: 5em; margin-top: -5em" class="interrogation justify-content-center col-lg-5">
-      <img class="" width="" src="{{asset("/img/formation.png")}}" alt="">
+      <img class="" width="" src="{{asset("/img/categorieflat.png")}}" alt="">
     </div>
   </div>
 </div>

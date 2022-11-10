@@ -1,6 +1,6 @@
 @extends('layout.adminApp')
 @section('titre')
-    Tous les articles
+    Ajouter un article | Digitarea
 @endsection
 @section('adminContent')
     

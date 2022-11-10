@@ -16,9 +16,9 @@
       </div>
       
     </div>
-    <div class="col-lg-5">
+    <div class="search col-lg-5">
       <input placeholder="Rechercher un article" style="border: 1px solid #211061; border-radius:4px; width: 18em; padding: 0.4em 12px" type="search" name="search" id="search">
-      <button style="padding: 7px 8px; background-color: #211061; color:white" class="search btn" type="submit">Rechercher</button>
+      <button style="padding: 7px 8px; background-color: #211061; color:white" class="searchBtn btn" type="submit">Rechercher</button>
     </div>
   </div>
 </div>
@@ -70,9 +70,6 @@
   function btn(){
     let content = document.querySelector(".btnContent");
 
-   
-
-    
     if(content.classList.contains("btnContentToggle")){
       content.classList.remove("btnContentToggle")
       setTimeout(() => {
@@ -86,6 +83,12 @@
       }, 100);
     } 
 
+  }
+
+  window.onclick = (e) =>{
+    if(e.target == "btnContentToggle"){
+      content.classList.remove("btnContentToggle")
+    }
   }
 </script>
 @endsection

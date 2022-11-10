@@ -1,58 +1,94 @@
 @extends('layout.app')
-
 @section('title')
-    Formations | Digitarea
+    Toutes les formations | Digitarea 
 @endsection
 @section('content')
-<div class="formationsTitre container-fluid">
-    <h2 class="" style="color:#211061; font-weight:800">Formations</h2>
+<div class="container articles">
+  <div style="transform: translateY(1.5em)" class="row form-group">
+    <div class="trier col-lg-7">
+      <div onclick="btn()" style=" border-radius: 4px" class="trierBtn py-2 text-center bg-white col-lg-6">
+        Trier par catégories
+      </div>
+      <div style=" border-radius: 4px" class="btnContent bg-white col-lg-6">
+        @foreach ($categories as $categorie)
+          <a class="btn" style="text-decoration: none; color: #211061; font-weight:500" href="/category/{{$categorie->nom}}">{!!html_entity_decode($categorie->nom)!!}</a><br/>
+        @endforeach 
+      </div>
+      
+    </div>
+    <div class="search col-lg-5">
+      <input placeholder="Rechercher un article" style="border: 1px solid #211061; border-radius:4px; width: 18em; padding: 0.4em 12px" type="search" name="search" id="search">
+      <button style="padding: 7px 8px; background-color: #211061; color:white" class="searchBtn btn" type="submit">Rechercher</button>
+    </div>
+  </div>
 </div>
-<div style="background-color: rgb(255, 255, 255)" class="container-fluid formations">
-    <h3 class="" style="color:#211061; font-weight:800">Allez encore plus loin</h3>
+<div style="background-color: rgb(255, 255, 255)" class="articles container pb-3 mt-5">
+  @if($articles->count() > 0)
+    <h2 class="pt-3" style="color: #211061; font-weight: 800">Tous les articles ({{$articles->count()}})</h2>
     <div class="row">
-      <div class=" col-lg-7 col-md-12 col-sm-12" style="font-size: 18px; ">
-        Vous souhaitez <strong style="color:#211061">approfondir vos connaissances ?</strong><br>
-        Vous êtes au bon endroit! <br>
-        <strong style="color:#211061">Digitarea</strong> met également à votre disposition des formations pour vous aider à résoudre des problèmes
-        plus ou moins complexes.<br>
-      </div>
-      <div style="padding-left: 5em; margin-top: -5em" class="interrogation justify-content-center col-lg-5">
-        <img class="" width="" src="{{asset("/img/formation.png")}}" alt="">
-      </div>
-    </div>
+      @foreach ($articles as $article)
+      <div class="mt-3 col-lg-4 col-md-6 col-sm-12 ">
+        <div style="min-height: 100%" class="card">
+          <img src="{{asset('/img')}}/{{$article->image}}" class="card-img-top" alt="...">
+            <div style="background-color: rgb(246, 246, 246)" class="card-body">
+              <h5 style="margin-top: -0.5em; color: #211061; font-weight:700" class="card-title">{!!html_entity_decode($article->titre)!!}</h5>
+              <p style="margin-top: -0.5em" class="card-text">{!!html_entity_decode($article->description)!!}</p>
+              <p style="margin-top: -0.8em" class="card-date">Publié le: {!!html_entity_decode($article->date_publication)!!}</p>
+              <p style="margin-top: -0.8em" class="card-auteur">Par: <strong>{!!html_entity_decode($article->auteur)!!}</strong></p>
+              <a style="margin-top: -0.5em; border: none; background-color:#211061" href="/article/{{$article->id}}" class="btn btn-primary">Lire plus</a>
+            </div>
+        </div>
+      </div> 
+      @endforeach   
   </div>
-  <div style="background-color: rgb(255, 255, 255)" class="container-fluid formations">
-    <h3 class="" style="color:#211061; font-weight:800">
-        Formations gratuites<span style="color:#ffc011"> Gratuites</span>
-    </h3>
+  @else
     <div class="row">
-      <div class=" col-lg-7 col-md-12 col-sm-12" style="font-size: 18px; ">
-        
-      </div>
-      <div style="padding-left: 5em; margin-top: -5em" class="interrogation justify-content-center col-lg-5">
-        <img class="" width="" src="{{asset("/img/formation.png")}}" alt="">
+      <div class="col-lg-7">
+        <h2 style="color: #211061; border-radius: 4px" class="pb-2 border text-center">Aucun article disponible pour le moment</h2>
       </div>
     </div>
+  @endif
+  <div style="margin-top: 2em">
+  
   </div>
-  <div style="background-color: rgb(255, 255, 255)" class="container-fluid formations">
-    <h3 class="" style="color:#211061; font-weight:800">
-        Formations <span style="color:#ffc011">Premium</span>
-        <i style="color:#ffc011" class="fa-sharp fa-solid fa-crown"></i>
-    </h3>
-    <div class="row">
-      <div class=" col-lg-7 col-md-12 col-sm-12" style="font-size: 18px; ">
-      </div>
-      <div style="padding-left: 5em; margin-top: -5em" class="interrogation justify-content-center col-lg-5">
-        <img class="" width="" src="{{asset("/img/formation.png")}}" alt="">
-      </div>
+</div>
+<footer style="background-color: #13083b" class="container-fluid  articlesFooter ">
+  <div class="row">
+    <div class="py-4 col-lg-12">
+      <p class="text-center text-white">Copyright &copy; DIgitarea {{date("Y")}}</p>
+      <p class="text-center text-white">Conception GONA</p>
     </div>
+  </footer>
+<script>
+  $("#search").keyup(function() {
+    let search = $("#search").val();
+    alert(search)
+  })
+</script>
+{{-- Toggle trier --}}
+<script>
+  function btn(){
+    let content = document.querySelector(".btnContent");
 
-  </div>
-  <footer style="background-color: #13083b" class="container-fluid pt-2 homeFooter ">
-    <div class="row">
-      <div class="py-4 col-lg-12">
-        <p class="text-center text-white">Copyright &copy; DIgitarea {{date("Y")}}</p>
-        <p class="text-center text-white">Conception GONA</p>
-      </div>
-    </footer>
+    if(content.classList.contains("btnContentToggle")){
+      content.classList.remove("btnContentToggle")
+      setTimeout(() => {
+        content.style.display = "none"
+      }, 100);
+    }
+    else{
+      content.style.display = "block"
+      setTimeout(() => {
+      content.classList.add("btnContentToggle")
+      }, 100);
+    } 
+
+  }
+
+  window.onclick = (e) =>{
+    if(e.target == "btnContentToggle"){
+      content.classList.remove("btnContentToggle")
+    }
+  }
+</script>
 @endsection
